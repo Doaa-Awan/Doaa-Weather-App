@@ -11,48 +11,73 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="src/style.css" />
   </head>
   <body>
     <div class="videoContainer">
-      <video>
-        <source />
+      <video autoplay loop muted plays-inline class="videoBG">
+        <source src="images/video.mp4" type="video/mp4" />
       </video>
 
       <div class="weather-app">
         <nav class="row">
-          <form class="col">
-            <input type="text" />
+          <form class="col" id="search-bar">
+            <input
+              type="text"
+              placeholder="Search for a city"
+              autocomplete="off"
+              autofocus
+              id="search-value"
+              class="search-bar"
+            />
           </form>
         </nav>
         <div class="row">
           <div class="col">
             <main>
-              <button id="location-button"></button>
-              <h1>St.Catharines</h1>
-              <h2>Current Temperature <button id="refresh"></button></h2>
-              <ul>
-                <li class="current-day">Monday</li>
-                <li class="current-time">12:45</li>
-              </ul>
-              <div class="description">
+              <div class="mainLine">
+                <button
+                  id="location-button"
+                  class="fa-solid fa-location-dot location-icon"
+                ></button>
+                <h1>St.Catharines</h1>
+                <h2>
+                  Current Temperature
+                  <button
+                    id="refresh"
+                    class="fa-solid fa-arrow-rotate-right refresh-icon"
+                    onClick="window.location.reload();"
+                  ></button>
+                </h2>
                 <ul>
-                  <li class="wind">
-                    Wind: <span id="wind-speed">23</span>km/h
-                  </li>
-                  <li class="humidity">
-                    Humidity: <span id="humidity">83</span>%
-                  </li>
+                  <li class="current-day">Monday</li>
+                  <li class="current-time">12:45</li>
                 </ul>
+                <div class="description">
+                  <ul>
+                    <li class="wind">
+                      Wind: <span id="wind-speed">23</span>km/h
+                    </li>
+                    <li class="humidity">
+                      Humidity: <span id="humidity">83</span>%
+                    </li>
+                  </ul>
+                </div>
+                <button class="forecast-button">Show Forecast</button>
               </div>
-              <button class="forecast-button">Show Forecast</button>
             </main>
           </div>
           <div class="col">
             <section>
               <h3>TODAY</h3>
               <div class="temp" id="tempNumber">13</div>
-              <i class="icon" id="icon-element"></i>
+              <i class="icon fa-solid fa-cloud-sun icon" id="icon-element"></i>
               <p class="weather-description" id="weather-description">
                 Mostly Cloudy
               </p>
@@ -68,29 +93,29 @@
           </div>
         </div>
         <ul class="row forecast">
-          <li class="col forecast-one">
+          <li class="col forecast-col">
             <div id="f1">Fri</div>
-            <div class="forecast-icon"></div>
+            <div class="fa-solid fa-cloud-sun forecast-icon"></div>
             <div class="forecast-temp">8</div>
           </li>
-          <li class="col forecast-two">
+          <li class="col forecast-col">
             <div id="f1">Fri</div>
-            <div class="forecast-icon"></div>
+            <div class="fa-solid fa-cloud-sun forecast-icon"></div>
             <div class="forecast-temp">8</div>
           </li>
-          <li class="col forecast-three">
+          <li class="col forecast-col">
             <div id="f1">Fri</div>
-            <div class="forecast-icon"></div>
+            <div class="fa-solid fa-cloud-sun forecast-icon"></div>
             <div class="forecast-temp">8</div>
           </li>
-          <li class="col forecast-four">
+          <li class="col forecast-col">
             <div id="f1">Fri</div>
-            <div class="forecast-icon"></div>
+            <div class="fa-solid fa-cloud-sun forecast-icon"></div>
             <div class="forecast-temp">8</div>
           </li>
-          <li class="col forecast-five">
+          <li class="col forecast-col">
             <div id="f1">Fri</div>
-            <div class="forecast-icon"></div>
+            <div class="fa-solid fa-cloud-sun forecast-icon"></div>
             <div class="forecast-temp">8</div>
           </li>
           <div class="col-6">
@@ -99,6 +124,11 @@
         </ul>
       </div>
     </div>
+
+    <script
+      src="https://kit.fontawesome.com/44b9581dbb.js"
+      crossorigin="anonymous"
+    ></script>
 
     <script src="src/script.js"></script>
   </body>
