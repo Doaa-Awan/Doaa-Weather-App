@@ -14,11 +14,6 @@ li {
   list-style: none;
 }
 
-main {
-  position: relative;
-  top: -30px;
-}
-
 h1 {
   font-size: 60px;
   color: #fff;
@@ -41,7 +36,6 @@ h2 {
 }
 
 section {
-  grid-area: section;
   border: 3px solid #ff54a2;
   border-radius: 50%;
   width: 400px;
@@ -60,6 +54,8 @@ h3 {
   font-size: 30px;
   color: #ff54a2;
   text-align: center;
+  margin-top: 30px;
+  font-weight: bold;
 }
 
 /* CONTAINER */
@@ -102,6 +98,7 @@ h3 {
   font-size: 20px;
   padding: 10px;
   padding-left: 30px;
+  padding-right: 60px;
   margin-top: 10px;
   margin-bottom: 10px;
   position: relative;
@@ -119,6 +116,13 @@ h3 {
   opacity: 1;
 }
 
+.search-icon {
+  font-size: 20px;
+  color: white;
+  position: relative;
+  right: 50px;
+  top: 40px;
+}
 /* MAIN LOCATION  */
 
 .mainLine {
@@ -132,7 +136,7 @@ h3 {
 .mainLine::after {
   content: "";
   width: 10px;
-  height: 60%;
+  height: 240px;
   background: linear-gradient(#ff469f, #42a5f5);
   position: absolute;
   left: -40px;
@@ -260,6 +264,9 @@ h3 {
   text-align: center;
   text-transform: capitalize;
   position: relative;
+
+  margin-top: 10px;
+  margin-bottom: 0;
 }
 
 .feels-like {
@@ -311,6 +318,7 @@ h3 {
   text-align: center;
   color: #ff54a2;
   font-size: 30px;
+  margin-top: 30px;
 }
 
 .forecast-col {
@@ -331,6 +339,21 @@ h3 {
   color: #42a5f5;
 }
 
+.lightBtn {
+  font-size: 40px;
+  color: rgba(248, 248, 248, 0.7);
+  background-color: transparent;
+  border: none;
+
+  position: relative;
+  right: 650px;
+  top: 40px;
+  padding: 0;
+  width: 20px;
+
+  display: block;
+}
+
 /* MOD LIST */
 
 .dissapear {
@@ -349,6 +372,15 @@ h3 {
   color: #ff54a2;
 }
 
+/* .lightGlow {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border-radius: 50%;
+  filter: blur(40px);
+} */
+
 @media (min-aspect-ratio: 16/9) {
   .videoBG {
     width: 100%;
@@ -363,13 +395,53 @@ h3 {
   }
 }
 
-@media only screen and (min-width: 767px) and (max-width: 1035px) {
+@media only screen and (min-width: 1370px) and (max-width: 1920px) {
+  .weather-app {
+    margin-top: 150px;
+    max-width: 1300px;
+  }
+
+  .lightBtn {
+    right: 600px;
+  }
+}
+
+@media only screen and (max-width: 1300px) {
   .weather-app {
     height: 100%;
+    max-width: 767px;
+  }
+
+  .lightBtn {
+    display: none;
+  }
+
+  section {
+    position: relative;
+    /* left: 300px;
+    bottom: 200px; */
+  }
+
+  .info {
+    position: relative;
+    bottom: 100px;
   }
 }
 
 @media only screen and (max-width: 767px) and (orientation: portrait) {
+  .search-icon {
+    font-size: 15px;
+    color: grey;
+    position: relative;
+    right: -275px;
+    top: -43px;
+  }
+
+  .lightBtn {
+    display: none;
+    right: 0;
+  }
+
   .videoBG {
     display: none;
   }
@@ -378,13 +450,15 @@ h3 {
     background-size: auto;
     /* cover */
     background: white;
+    max-height: auto;
   }
 
   .weather-app {
-    display: block;
-    margin: 0 auto;
     max-width: 400px;
-    height: 100%;
+
+    margin-top: 0;
+    margin-bottom: 0;
+
     border: 1px solid rgba(128, 128, 128, 0.5);
     padding: 20px;
     border-radius: 30px;
@@ -406,11 +480,19 @@ h3 {
     margin: 0 auto;
     padding: 0;
     background-color: white;
+    left: 0;
+    bottom: 0;
+  }
+
+  .info {
+    bottom: 0;
   }
 
   main {
     padding-left: 15px;
     padding-top: 15px;
+    position: relative;
+    top: -60px;
   }
 
   .mainLine {
@@ -422,10 +504,6 @@ h3 {
   }
 
   .forecast-button {
-    display: none;
-  }
-
-  .lightBtn {
     display: none;
   }
 
@@ -537,12 +615,7 @@ h3 {
   }
 
   .units {
-    display: block;
-    float: right;
-    position: relative;
-    top: 20px;
-    right: 30px;
-    text-align: center;
+    display: inline-block;
   }
 
   .celsius {
@@ -571,22 +644,20 @@ h3 {
   }
 
   .icon {
-    font-size: 90px;
+    font-size: 70px;
     color: #42a5f5;
     text-align: left;
     position: relative;
-    bottom: 70px;
-    left: 40px;
+
+    left: 70px;
   }
 
   .temp {
     color: #42a5f5;
-    font-size: 85px;
+    font-size: 65px;
     display: inline-block;
     text-align: center;
     position: relative;
-    left: 100px;
-    top: 60px;
   }
 
   .weather-description {
@@ -597,8 +668,8 @@ h3 {
     margin: 0 auto;
     text-align: center;
     position: relative;
-    bottom: 50px;
-    padding: 0px;
+    top: 20px;
+
     text-transform: capitalize;
   }
 
@@ -609,13 +680,11 @@ h3 {
     margin: 0 auto;
     text-align: center;
     position: relative;
-    bottom: 50px;
-    padding: 0;
+    top: 15px;
   }
 
   .forecast {
-    margin: 30px auto;
-    margin-bottom: 60px;
+    margin: 0;
     text-align: center;
     color: rgba(66, 165, 245, 0.7);
     font-size: 20px;

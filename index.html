@@ -36,7 +36,9 @@
               id="search-value"
               class="search-bar"
             />
+            <i class="fa-solid fa-magnifying-glass search-icon"> </i>
           </form>
+          <button class="fa-solid fa-lightbulb lightBtn"></button>
         </nav>
         <div class="row">
           <div class="col">
@@ -59,7 +61,7 @@
                   <li class="current-day">Monday</li>
                   <li class="current-time">12:45</li>
                 </ul>
-                <div class="description">
+                <div class="info">
                   <ul>
                     <li class="wind">
                       Wind: <span id="wind-speed">23</span>km/h
@@ -76,7 +78,7 @@
           <div class="col">
             <section>
               <h3>TODAY</h3>
-              <div class="temp" id="tempNumber">13</div>
+              <div class="temp" id="tempNumber">13°</div>
               <i class="icon fa-solid fa-cloud-sun icon" id="icon-element"></i>
               <p class="weather-description" id="weather-description">
                 Mostly Cloudy
@@ -85,9 +87,9 @@
                 Feels like <span id="feels-like">13</span>°
               </p>
               <div class="units">
-                <a href="#" class="celsius" id="c">C</a>
+                <a href="#" class="celsius" id="c">°C</a>
                 <span class="cfLineBreak">|</span>
-                <a href="#" class="fahrenheit" id="f">F</a>
+                <a href="#" class="fahrenheit" id="f">°F</a>
               </div>
             </section>
           </div>
@@ -118,9 +120,7 @@
             <div class="fa-solid fa-cloud-sun forecast-icon"></div>
             <div class="forecast-temp">8</div>
           </li>
-          <div class="col-5">
-            <button class="lightBtn"></button>
-          </div>
+          <div class="col-5"></div>
         </ul>
       </div>
     </div>
