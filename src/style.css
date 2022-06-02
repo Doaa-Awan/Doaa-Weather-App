@@ -407,40 +407,111 @@ h3 {
   }
 }
 
-@media only screen and (max-width: 1300px) {
+@media only screen and (max-width: 1200px) {
   .weather-app {
     height: 100%;
-    max-width: 767px;
-  }
-
-  .lightBtn {
-    display: none;
-  }
-
-  section {
-    position: relative;
-    /* left: 300px;
-    bottom: 200px; */
+    width: 767px;
+    padding-left: 0;
+    border: 1px solid blue;
   }
 
   .info {
     position: relative;
     bottom: 100px;
   }
+
+  h1 {
+    font-size: 40px;
+  }
+
+  /* main {
+    position: relative;
+    top: 300px;
+  } */
+
+  section {
+    position: relative;
+    top: 100px;
+
+    width: 300px;
+    height: 300px;
+
+    display: block;
+    margin: 0 auto;
+  }
+
+  /* .forecast{
+    flex-direction: column;
+    float: right;
+    position: relative;
+    bottom: 500px;
+  } */
+
+  /* .forecast-col{
+    width: 100px;
+  } */
 }
 
 @media only screen and (max-width: 767px) and (orientation: portrait) {
-  .search-icon {
-    font-size: 15px;
-    color: grey;
-    position: relative;
-    right: -275px;
-    top: -43px;
+  body {
+    margin-top: 40px;
+    margin-bottom: 40px;
   }
 
-  .lightBtn {
-    display: none;
-    right: 0;
+  .date {
+    position: relative;
+    top: 15px;
+  }
+
+  main {
+    padding-left: 15px;
+    padding-top: 15px;
+    position: relative;
+    top: -30px;
+  }
+
+  section {
+    border: 2px solid #42a5f5;
+    border-radius: 50%;
+    width: 300px;
+    height: 300px;
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+    padding: 0;
+    background-color: white;
+    left: 0;
+    bottom: 20px;
+
+    top: 0px;
+    right: 0px;
+  }
+
+  h1 {
+    font-size: 35px;
+    font-weight: 500;
+    color: #42a5f5;
+    padding: none;
+    text-align: left;
+    padding-top: 0;
+  }
+
+  h1:hover {
+    -webkit-text-stroke: 1px #42a5f5;
+    color: transparent;
+  }
+
+  h2 {
+    font-size: 15px;
+    font-weight: 400;
+    color: grey;
+    text-align: left;
+  }
+
+  h3 {
+    font-weight: 500;
+    font-size: 20px;
+    color: #42a5f5;
   }
 
   .videoBG {
@@ -456,44 +527,28 @@ h3 {
 
   .weather-app {
     max-width: 400px;
-
-    margin-top: 0;
-    margin-bottom: 0;
-
     border: 1px solid rgba(128, 128, 128, 0.5);
     padding: 20px;
     border-radius: 30px;
     background: white;
   }
 
-  body {
-    margin-top: 40px;
-    margin-bottom: 40px;
-  }
-
-  section {
-    border: 2px solid #42a5f5;
-    border-radius: 50%;
-    width: 300px;
-    height: 300px;
-    max-width: 100%;
-    display: block;
-    margin: 0 auto;
-    padding: 0;
-    background-color: white;
-    left: 0;
-    bottom: 0;
-  }
-
   .info {
-    bottom: 0;
+    bottom: 50px;
   }
 
-  main {
-    padding-left: 15px;
-    padding-top: 15px;
+  .search-icon {
+    font-size: 15px;
+    color: grey;
     position: relative;
-    top: -60px;
+    right: -275px;
+    top: -43px;
+  }
+
+  .lightBtn {
+    display: none !important;
+    right: 0;
+    color: blue;
   }
 
   .mainLine {
@@ -529,27 +584,6 @@ h3 {
   ::placeholder {
     color: grey;
     opacity: 1;
-  }
-
-  h1 {
-    font-size: 35px;
-    font-weight: 500;
-    color: #42a5f5;
-    padding: none;
-    text-align: left;
-    padding-top: 0;
-  }
-
-  h1:hover {
-    -webkit-text-stroke: 1px #42a5f5;
-    color: transparent;
-  }
-
-  h2 {
-    font-size: 15px;
-    font-weight: 400;
-    color: grey;
-    text-align: left;
   }
 
   .location-icon {
@@ -617,6 +651,8 @@ h3 {
 
   .units {
     display: inline-block;
+    left: 120px;
+    top: 20px;
   }
 
   .celsius {
@@ -685,10 +721,12 @@ h3 {
   }
 
   .forecast {
-    margin: 0;
+    margin-bottom: 40px;
     text-align: center;
     color: rgba(66, 165, 245, 0.7);
     font-size: 20px;
+    position: relative;
+    bottom: 50px;
   }
 
   .forecast-col {
