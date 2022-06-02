@@ -395,10 +395,11 @@ h3 {
   }
 }
 
-@media only screen and (min-width: 1370px) and (max-width: 1920px) {
+@media only screen and (min-width: 1370px) and (max-width: 1920px) and (min-height: 900px) {
   .weather-app {
     margin-top: 150px;
     max-width: 1300px;
+    margin-bottom: 0;
   }
 
   .lightBtn {
