@@ -220,23 +220,44 @@ h3 {
 
 /* WIND & HUMIDITY */
 
-.wind {
+.info {
   color: white;
   font-size: 20px;
   font-weight: 300;
-  text-align: right;
+  text-align: left;
   position: relative;
-  right: 100px;
+  left: 300px;
+}
+
+.wind, .humidity{
+  font-weight: 500;
+}
+/* 
+#wind-speed {
+  font-weight: bold;
+}
+
+#humidity{
+  font-weight: bold;
+} */
+
+/* .wind {
+  color: white;
+  font-size: 20px;
+  font-weight: 300;
+  text-align: left;
+  position: relative;
+  right: -100px;
 }
 
 .humidity {
   color: white;
   font-size: 20px;
   font-weight: 300;
-  text-align: right;
+  text-align: left;
   position: relative;
-  right: 100px;
-}
+  right: -100px;
+} */
 
 /* TEMP SECTION CIRCLE */
 

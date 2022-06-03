@@ -1,20 +1,16 @@
-//SEARCH BAR:
-function handleSubmit(event) {
-  event.preventDefault();
-  let searchInput = document.querySelector("#search-value");
-  search(searchInput.value);
-}
+// function formatDate(timestamp) {
+//   let now = new Date(timestamp);
+//   let hours = now.getHours();
+//   if (hours < 10) {
+//     hours = `0${hours}`;
+//   }
 
-let searchBar = document.querySelector("#search-bar");
-searchBar.addEventListener("submit", handleSubmit);
-
-function search(city) {
-  let units = `metric`;
-  let apiKey = "9d66353d7a075841285d6608a0acc09a";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
-
-  axios.get(apiUrl).then(displayWeather);
-}
+//   let minutes = now.getMinutes();
+//   if (minutes < 10) {
+//     minutes = `0${minutes}`;
+//   }
+//   return `${hours}:${minutes}`;
+// }
 
 //CURRENT TEMPERATURE
 function displayWeather(response) {
@@ -41,17 +37,34 @@ function displayWeather(response) {
   iconElement.setAttribute("class", `fa-solid fa-cloud-sun icon`);
   wind.innerHTML = `${windSpeed}`;
   humidityElement.innerHTML = `${humidity}`;
+
+  //   let currentTime = document.querySelector(".current-time");
+  //   currentTime.innerHTML = formatDate(response.data.dt * 1000);
+
+  //   let currentDay = document.querySelector(".current-day");
+  //   currentDay.innerHTML = formatDate(now);
 }
 
-//REFRESH BUTTON:
-function reload() {
-  reload = location.reload();
+//SEARCH BAR:
+function handleSubmit(event) {
+  event.preventDefault();
+  let searchInput = document.querySelector("#search-value");
+  search(searchInput.value);
 }
 
-let refreshButton = document.querySelector("#refresh");
-refreshButton.addEventListener("click", reload, false);
+let searchBar = document.querySelector("#search-bar");
+searchBar.addEventListener("submit", handleSubmit);
+
+function search(city) {
+  let units = `metric`;
+  let apiKey = "9d66353d7a075841285d6608a0acc09a";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
+
+  axios.get(apiUrl).then(displayWeather);
+}
 
 //CURRENT DAY
+
 function formatDay(date) {
   let dayIndex = date.getDay();
   let days = [
@@ -72,6 +85,7 @@ let currentDay = document.querySelector(".current-day");
 currentDay.innerHTML = formatDay(now);
 
 //CURRENT TIME
+
 function formatTime(time) {
   let hours = time.getHours();
   if (hours < 10) {
@@ -87,6 +101,14 @@ function formatTime(time) {
 
 let currentTime = document.querySelector(".current-time");
 currentTime.innerHTML = formatTime(now);
+
+//REFRESH BUTTON:
+function reload() {
+  reload = location.reload();
+}
+
+let refreshButton = document.querySelector("#refresh");
+refreshButton.addEventListener("click", reload, false);
 
 //CELSIUS BUTTON:
 function celsius(event) {
@@ -140,7 +162,7 @@ function showLocalTemp(response) {
   h1.innerHTML = `${location}, ${response.data.sys.country}`;
   changeTemp.innerHTML = `${temp}°`;
   weatherDescription.innerHTML = `${description}`;
-  feel.innerHTML = `Feels like ${feelsLike}°`;
+  feel.innerHTML = `${feelsLike}`;
   iconElement.setAttribute("class", `fa-solid fa-cloud-sun icon`);
   wind.innerHTML = `${windSpeed}`;
   humidityElement.innerHTML = `${humidity}`;
