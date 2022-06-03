@@ -1,17 +1,3 @@
-// function formatDate(timestamp) {
-//   let now = new Date(timestamp);
-//   let hours = now.getHours();
-//   if (hours < 10) {
-//     hours = `0${hours}`;
-//   }
-
-//   let minutes = now.getMinutes();
-//   if (minutes < 10) {
-//     minutes = `0${minutes}`;
-//   }
-//   return `${hours}:${minutes}`;
-// }
-
 //CURRENT TEMPERATURE
 function displayWeather(response) {
   console.log(response);
@@ -26,23 +12,21 @@ function displayWeather(response) {
   let weatherDescription = document.querySelector("#weather-description");
   let feel = document.querySelector("#feels-like");
   let cityElement = document.querySelector("#location");
-  let iconElement = document.querySelector("#icon-element");
   let wind = document.querySelector("#wind-speed");
   let humidityElement = document.querySelector("#humidity");
+  let iconElement = document.querySelector("#icon-element");
 
   temp.innerHTML = `${temperature}°`;
   weatherDescription.innerHTML = `${description}`;
   feel.innerHTML = `${feelsLike}`;
   cityElement.innerHTML = `${response.data.name}, ${response.data.sys.country}`;
-  iconElement.setAttribute("class", `fa-solid fa-cloud-sun icon`);
   wind.innerHTML = `${windSpeed}`;
   humidityElement.innerHTML = `${humidity}`;
-
-  //   let currentTime = document.querySelector(".current-time");
-  //   currentTime.innerHTML = formatDate(response.data.dt * 1000);
-
-  //   let currentDay = document.querySelector(".current-day");
-  //   currentDay.innerHTML = formatDate(now);
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", `${description}`);
 }
 
 //SEARCH BAR:
