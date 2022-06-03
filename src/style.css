@@ -210,7 +210,7 @@ h3 {
   position: relative;
   right: 40px;
 
-  transition: all 2s ease-in-out;
+  /* transition: all 2s ease-in-out; */
 }
 
 .forecast-button:hover {
@@ -344,14 +344,23 @@ h3 {
   color: rgba(248, 248, 248, 0.7);
   background-color: transparent;
   border: none;
-
-  position: relative;
-  right: 650px;
-  top: 40px;
-  padding: 0;
   width: 20px;
+  padding: 0;
+  position: relative;
+  top: 70px;
+  left: 100px;
+}
 
-  display: block;
+.lightBtn:hover {
+  color: white;
+}
+
+.code-link {
+  font-size: 15px;
+  position: relative;
+  top: 130px;
+  right: 90px;
+  color: white;
 }
 
 /* MOD LIST */
@@ -400,10 +409,8 @@ h3 {
     margin-top: 150px;
     max-width: 1300px;
     margin-bottom: 0;
-  }
-
-  .lightBtn {
-    right: 600px;
+    border: 1px solid red;
+    overflow: hidden;
   }
 }
 
@@ -415,19 +422,13 @@ h3 {
     border: 1px solid blue;
   }
 
-  .info {
-    position: relative;
-    bottom: 100px;
-  }
-
   h1 {
-    font-size: 40px;
+    font-size: 35px;
   }
 
-  /* main {
-    position: relative;
-    top: 300px;
-  } */
+  h3 {
+    font-size: 22px;
+  }
 
   section {
     position: relative;
@@ -440,27 +441,94 @@ h3 {
     margin: 0 auto;
   }
 
-  /* .forecast{
-    flex-direction: column;
-    float: right;
-    position: relative;
-    bottom: 500px;
-  } */
+  .temp {
+    font-size: 70px;
+    text-align: right;
+    left: 60px;
+    top: 25px;
+  }
 
-  /* .forecast-col{
+  .icon {
+    font-size: 70px;
+  }
+
+  .location-icon {
+    font-size: 25px;
+    padding-top: 7px;
+    padding-right: 10px;
+    margin: 0;
+  }
+
+  .search-bar {
+    top: 70px;
+    font-size: 15px;
+    margin-left: 30px;
+  }
+
+  .forecast-button {
     width: 100px;
-  } */
+    font-size: 15px;
+    right: -40px;
+    bottom: 30px;
+    border-radius: 50%;
+    height: 100px;
+    border: 2px solid white;
+  }
+
+  .mainLine::after {
+    height: 200px;
+    top: 5px;
+  }
+
+  .forecast-col {
+    font-size: 25px;
+    max-width: 100px;
+    left: 100px;
+  }
+
+  .units {
+    position: relative;
+    left: 115px;
+    top: 0px;
+  }
+
+  .lightBtn {
+    top: 60px;
+    left: -80px;
+  }
+
+  .search-icon {
+    left: 480px;
+    right: 0px;
+    top: 27px;
+  }
+
+  .info {
+    position: relative;
+    left: 120px;
+  }
+
+  .code-link {
+    font-size: 15px;
+    position: relative;
+    top: -680px;
+    color: white;
+    right: 220px;
+  }
 }
 
 @media only screen and (max-width: 767px) and (orientation: portrait) {
+  .weather-app {
+    max-width: 400px;
+    border: 1px solid rgba(128, 128, 128, 0.5);
+    padding: 20px;
+    border-radius: 30px;
+    background: white;
+  }
+
   body {
     margin-top: 40px;
     margin-bottom: 40px;
-  }
-
-  .date {
-    position: relative;
-    top: 15px;
   }
 
   main {
@@ -525,16 +593,93 @@ h3 {
     max-height: auto;
   }
 
-  .weather-app {
-    max-width: 400px;
-    border: 1px solid rgba(128, 128, 128, 0.5);
-    padding: 20px;
-    border-radius: 30px;
-    background: white;
+  .date {
+    position: relative;
+    top: 15px;
+  }
+
+  .current-day {
+    font-size: 25px;
+    font-weight: 500;
+    color: rgba(66, 165, 245);
+    line-height: 1;
+    padding: 0;
+  }
+
+  .current-time {
+    font-size: 22px;
+    color: rgba(66, 165, 245);
+    font-family: sans-serif;
+    line-height: 1.5;
   }
 
   .info {
     bottom: 50px;
+    left: 0;
+  }
+
+  .wind {
+    color: grey;
+    text-align: right;
+    font-size: 14px;
+    font-weight: 300;
+    position: relative;
+    top: 10px;
+    right: 10px;
+  }
+
+  .humidity {
+    color: grey;
+    text-align: right;
+    font-size: 14px;
+    font-weight: 300;
+    position: relative;
+    top: 10px;
+    right: 10px;
+  }
+
+  .units {
+    display: inline-block;
+    left: 120px;
+    top: 20px;
+  }
+
+  .temp {
+    color: #42a5f5;
+    font-size: 65px;
+    display: inline-block;
+    text-align: center;
+    position: relative;
+  }
+
+  .weather-description {
+    color: #42a5f5;
+    font-size: 20px;
+    font-weight: 600;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    top: 20px;
+    text-transform: capitalize;
+  }
+
+  .feels-like {
+    color: grey;
+    font-size: 18px;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    top: 15px;
+  }
+
+  .icon {
+    font-size: 70px;
+    color: #42a5f5;
+    text-align: left;
+    position: relative;
+    left: 70px;
   }
 
   .search-icon {
@@ -543,47 +688,8 @@ h3 {
     position: relative;
     right: -275px;
     top: -43px;
-  }
 
-  .lightBtn {
     display: none !important;
-    right: 0;
-    color: blue;
-  }
-
-  .mainLine {
-    margin: 0;
-  }
-
-  .mainLine::after {
-    display: none;
-  }
-
-  .forecast-button {
-    display: none;
-  }
-
-  .search-bar {
-    width: 300px;
-    padding: 8px;
-    padding-left: 15px;
-    color: grey;
-    border: 1px solid #42a5f5;
-    margin: 10px;
-    font-size: 15px;
-    position: relative;
-    top: -1px;
-  }
-
-  .search-bar:focus {
-    outline: none;
-    border-color: #9ec3ed;
-    box-shadow: 0 0 10px #9ecaed;
-  }
-
-  ::placeholder {
-    color: grey;
-    opacity: 1;
   }
 
   .location-icon {
@@ -614,45 +720,67 @@ h3 {
     font-size: 13px;
   }
 
-  .current-day {
-    font-size: 25px;
-    font-weight: 500;
-    color: rgba(66, 165, 245);
-    line-height: 1;
-    padding: 0;
-  }
-
-  .current-time {
-    font-size: 22px;
-    color: rgba(66, 165, 245);
-    font-family: sans-serif;
-    line-height: 1.5;
-  }
-
-  .wind {
+  .search-bar {
+    width: 300px;
+    padding: 8px;
+    padding-left: 15px;
     color: grey;
-    text-align: right;
-    font-size: 14px;
-    font-weight: 300;
+    border: 1px solid #42a5f5;
+    margin: 10px;
+    font-size: 15px;
     position: relative;
-    top: 10px;
-    right: 10px;
+    top: -1px;
   }
 
-  .humidity {
+  .forecast-col {
+    margin-bottom: 20px;
+    text-align: center;
+    color: rgba(66, 165, 245, 0.7);
+    font-size: 20px;
+    position: relative;
+    bottom: 20px;
+    left: 8px;
+    border: none;
+    background: white;
+  }
+
+  .code-link {
+    font-size: 10px;
+    position: relative;
+    top: 50px;
+    right: 0;
     color: grey;
-    text-align: right;
-    font-size: 14px;
-    font-weight: 300;
-    position: relative;
-    top: 10px;
-    right: 10px;
   }
 
-  .units {
-    display: inline-block;
-    left: 120px;
-    top: 20px;
+  .search-bar:focus {
+    outline: none;
+    border-color: #9ec3ed;
+    box-shadow: 0 0 10px #9ecaed;
+  }
+
+  ::placeholder {
+    color: grey;
+    opacity: 1;
+  }
+
+  .forecast-col:hover {
+    color: #42a5f5;
+  }
+
+  .lightBtn {
+    display: none !important;
+  }
+
+  .mainLine {
+    margin: 0;
+  }
+
+  .mainLine::after {
+    display: none;
+  }
+
+  .forecast-button {
+    display: none;
   }
 
   .celsius {
@@ -679,64 +807,18 @@ h3 {
   .fahrenheit:hover {
     color: #42a5f5;
   }
-
-  .icon {
-    font-size: 70px;
-    color: #42a5f5;
-    text-align: left;
-    position: relative;
-
-    left: 70px;
-  }
-
-  .temp {
-    color: #42a5f5;
-    font-size: 65px;
-    display: inline-block;
-    text-align: center;
-    position: relative;
-  }
-
-  .weather-description {
-    color: #42a5f5;
-    font-size: 20px;
-    font-weight: 600;
-    display: block;
-    margin: 0 auto;
-    text-align: center;
-    position: relative;
-    top: 20px;
-
-    text-transform: capitalize;
-  }
-
-  .feels-like {
-    color: grey;
-    font-size: 18px;
-    display: block;
-    margin: 0 auto;
-    text-align: center;
-    position: relative;
-    top: 15px;
-  }
-
-  .forecast {
-    margin-bottom: 40px;
-    text-align: center;
-    color: rgba(66, 165, 245, 0.7);
-    font-size: 20px;
-    position: relative;
-    bottom: 50px;
-  }
-
-  .forecast-col {
-    font-weight: 300;
-    transition: all 200ms ease-in-out;
-    border: none;
-    background-color: white;
-  }
-
-  .forecast-col:hover {
-    color: #42a5f5;
-  }
 }
+
+/* .forecast-col {
+    font-size: 20px;
+    max-width: 100%;
+
+    border: 1px solid pink;
+    background-color: white;
+
+    left: 0;
+
+    max-width: 50px;
+
+    margin: 10px;
+  } */
