@@ -467,6 +467,10 @@ h3 {
     font-size: 35px;
   }
 
+  h2 {
+    font-size: 15px;
+  }
+
   h3 {
     font-size: 22px;
   }
@@ -482,16 +486,31 @@ h3 {
     margin: 0 auto;
   }
 
+  .refresh-icon {
+    font-size: 15px;
+  }
+
   .temp {
     font-size: 70px;
     text-align: right;
     left: 60px;
-    top: 25px;
+    top: 0px;
+    /* top: 25px; */
+  }
+
+  .weather-description,
+  .feels-like {
+    bottom: 40px;
   }
 
   .icon {
-    font-size: 70px;
+    bottom: 20px;
+    height: 150px;
   }
+
+  /* .icon {
+    font-size: 70px;
+  } */
 
   .location-icon {
     font-size: 25px;
@@ -504,6 +523,7 @@ h3 {
     top: 70px;
     font-size: 15px;
     margin-left: 30px;
+    width: 400px;
   }
 
   .forecast-button {
@@ -514,6 +534,7 @@ h3 {
     border-radius: 50%;
     height: 100px;
     border: 2px solid white;
+    background: transparent;
   }
 
   .mainLine::after {
@@ -530,7 +551,7 @@ h3 {
   .units {
     position: relative;
     left: 115px;
-    top: 0px;
+    top: -25px;
   }
 
   .lightBtn {
