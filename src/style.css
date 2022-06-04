@@ -15,7 +15,7 @@ li {
 }
 
 h1 {
-  font-size: 60px;
+  font-size: 50px;
   color: #fff;
   font-weight: 600;
   transition: 0.5s;
@@ -137,7 +137,7 @@ h3 {
 .mainLine::after {
   content: "";
   width: 10px;
-  height: 240px;
+  height: 65%;
   background: linear-gradient(#ff469f, #42a5f5);
   position: absolute;
   left: -40px;
@@ -295,7 +295,6 @@ h3 {
   text-transform: capitalize;
   position: relative;
   bottom: 20px;
-  
 
   /* margin-top: 10px; */
   margin-bottom: 0;
@@ -318,7 +317,6 @@ h3 {
   position: relative;
   left: 160px;
   /* top: 30px; */
-  
 }
 
 .celsius {
