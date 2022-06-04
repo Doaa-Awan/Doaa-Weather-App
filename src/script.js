@@ -29,16 +29,7 @@ function displayWeather(response) {
   iconElement.setAttribute("alt", `${description}`);
 }
 
-//SEARCH BAR:
-function handleSubmit(event) {
-  event.preventDefault();
-  let searchInput = document.querySelector("#search-value");
-  search(searchInput.value);
-}
-
-let searchBar = document.querySelector("#search-bar");
-searchBar.addEventListener("submit", handleSubmit);
-
+//SEARCH:
 function search(city) {
   let units = `metric`;
   let apiKey = "9d66353d7a075841285d6608a0acc09a";
@@ -46,6 +37,15 @@ function search(city) {
 
   axios.get(apiUrl).then(displayWeather);
 }
+
+function handleSubmit(event) {
+  event.preventDefault();
+  let searchInput = document.querySelector("#search-value");
+  search(searchInput.value);
+}
+
+let searchBar = document.querySelector("#search-form");
+searchBar.addEventListener("submit", handleSubmit);
 
 //CURRENT DAY
 
