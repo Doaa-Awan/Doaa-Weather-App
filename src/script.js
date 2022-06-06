@@ -16,6 +16,8 @@ function displayWeather(response) {
   let humidityElement = document.querySelector("#humidity");
   let iconElement = document.querySelector("#icon-element");
 
+  celsiusTemperature = response.data.main.temp;
+
   temp.innerHTML = `${temperature}°`;
   weatherDescription.innerHTML = `${description}`;
   feel.innerHTML = `${feelsLike}`;
@@ -44,9 +46,6 @@ function handleSubmit(event) {
   search(searchInput.value);
 }
 
-let searchBar = document.querySelector("#search-form");
-searchBar.addEventListener("submit", handleSubmit);
-
 //CURRENT DAY
 
 function formatDay(date) {
@@ -64,10 +63,6 @@ function formatDay(date) {
   return `${day}`;
 }
 
-let now = new Date();
-let currentDay = document.querySelector(".current-day");
-currentDay.innerHTML = formatDay(now);
-
 //CURRENT TIME
 
 function formatTime(time) {
@@ -83,48 +78,31 @@ function formatTime(time) {
   return `${hours}:${minutes}`;
 }
 
-let currentTime = document.querySelector(".current-time");
-currentTime.innerHTML = formatTime(now);
-
 //REFRESH BUTTON:
 function reload() {
   reload = location.reload();
 }
 
-let refreshButton = document.querySelector("#refresh");
-refreshButton.addEventListener("click", reload, false);
-
 //CELSIUS BUTTON:
 function celsius(event) {
   event.preventDefault();
   let temp = document.querySelector("#tempNumber");
-  temp.innerHTML = "19";
-  let c = document.querySelector("#c");
-  let f = document.querySelector("#f");
-  c.classList.remove("cfmodgrey");
-  c.classList.add("cfmodblue");
-  f.classList.remove("cfmodblue");
-  f.classList.add("cfmodgrey");
-}
+  temp.innerHTML = `${Math.round(celsiusTemperature)}°`;
 
-let celsiusClick = document.querySelector("#c");
-celsiusClick.addEventListener("click", celsius);
+  fahrenheitClick.classList.remove("active");
+  celsiusClick.classList.add("active");
+}
 
 //FAHRENHEIT BUTTON
 function fahrenheit(event) {
   event.preventDefault();
+  let fahrenheitTemp = (celsiusTemperature * 9) / 5 + 32;
   let temp = document.querySelector("#tempNumber");
-  temp.innerHTML = "66";
-  let c = document.querySelector("#c");
-  let f = document.querySelector("#f");
-  f.classList.remove("cfmodgrey");
-  f.classList.add("cfmodblue");
-  c.classList.remove("cfmodblue");
-  c.classList.add("cfmodgrey");
-}
+  temp.innerHTML = `${Math.round(fahrenheitTemp)}°`;
 
-let fahrenheitClick = document.querySelector("#f");
-fahrenheitClick.addEventListener("click", fahrenheit);
+  celsiusClick.classList.remove("active");
+  fahrenheitClick.classList.add("active");
+}
 
 //CURRENT LOCATION BUTTON:
 function showLocalTemp(response) {
@@ -166,5 +144,30 @@ function getCurrentPosition() {
   navigator.geolocation.getCurrentPosition(retrievePosition);
 }
 
+//GLOBAL VARIABLES:
+
+let searchBar = document.querySelector("#search-form");
+searchBar.addEventListener("submit", handleSubmit);
+
+let now = new Date();
+let currentDay = document.querySelector(".current-day");
+currentDay.innerHTML = formatDay(now);
+
+let currentTime = document.querySelector(".current-time");
+currentTime.innerHTML = formatTime(now);
+
+let refreshButton = document.querySelector("#refresh");
+refreshButton.addEventListener("click", reload, false);
+
+let celsiusTemperature = null;
+
+let celsiusClick = document.querySelector("#c");
+celsiusClick.addEventListener("click", celsius);
+
+let fahrenheitClick = document.querySelector("#f");
+fahrenheitClick.addEventListener("click", fahrenheit);
+
 let localButton = document.querySelector("#location-button");
 localButton.addEventListener("click", getCurrentPosition);
+
+search("St. Catharines");

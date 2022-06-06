@@ -318,19 +318,25 @@ h3 {
 .units {
   position: relative;
   left: 160px;
+
   /* top: 30px; */
 }
 
 .celsius {
   font-size: 20px;
   text-decoration: none;
-  color: #ff54a2;
+  color: grey;
 }
 
 .fahrenheit {
   font-size: 20px;
-  color: grey;
   text-decoration: none;
+  color: grey;
+}
+
+.active {
+  color: #ff54a2;
+  cursor: default;
 }
 
 .celsius:hover {
