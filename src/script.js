@@ -103,6 +103,8 @@ function toggleLight() {
   let f3 = document.querySelector(".f3");
   let f4 = document.querySelector(".f4");
   let f5 = document.querySelector(".f5");
+  let nameSigned = document.querySelector(".code-link");
+  let link = document.querySelector(".link");
   lightBtn.classList.toggle("white");
   section.classList.toggle("glow");
   f1.classList.toggle("glow");
@@ -110,6 +112,8 @@ function toggleLight() {
   f3.classList.toggle("glow");
   f4.classList.toggle("glow");
   f5.classList.toggle("glow");
+  nameSigned.classList.toggle("white");
+  link.classList.toggle("white");
 }
 
 //CURRENT LOCATION BUTTON:

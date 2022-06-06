@@ -47,10 +47,6 @@ section {
   transition: all 200ms ease-in-out;
 }
 
-section:hover {
-  background: #fff;
-}
-
 h3 {
   font-size: 30px;
   color: #ff54a2;
@@ -152,12 +148,12 @@ h3 {
   float: left;
 
   margin-right: 20px;
-  padding-top: 15px;
-  padding-right: 10px;
+  padding-top: 13px;
+  padding-right: 15px;
 
   height: 30px;
   width: 25px;
-  font-size: 37px;
+  font-size: 32px;
   color: white;
   background-color: transparent;
   border: none;
@@ -268,7 +264,7 @@ h3 {
 .icon {
   display: inline-block;
   position: relative;
-  left: 30px;
+  left: 20px;
   height: 200px;
 }
 
@@ -286,7 +282,7 @@ h3 {
   display: inline-block;
   text-align: right;
   position: relative;
-  left: 70px;
+  left: 60px;
   top: 30px;
 }
 
@@ -390,7 +386,29 @@ h3 {
   position: relative;
   top: 70px;
   left: -200px;
+  transition: all 200ms ease-in-out;
 }
+
+.code-link {
+  font-size: 15px;
+  position: relative;
+  top: 130px;
+  right: 90px;
+  color: #ff54a2;
+  transition: all 200ms ease-in-out;
+}
+
+.link {
+  text-decoration: none;
+  color: #ff54a2;
+  transition: all 200ms ease-in-out;
+}
+
+.link:hover {
+  color: #42a5f5;
+}
+
+/* MOD LIST */
 
 .white {
   color: white;
@@ -399,29 +417,6 @@ h3 {
 .glow {
   background-color: white;
 }
-
-/* .lightBtn:hover {
-  color: white;
-} */
-
-.code-link {
-  font-size: 15px;
-  position: relative;
-  top: 130px;
-  right: 90px;
-  color: white;
-}
-
-.link {
-  text-decoration: none;
-  color: white;
-}
-
-.link:hover {
-  color: #ff54a2;
-}
-
-/* MOD LIST */
 
 .dissapear {
   display: none;
@@ -577,9 +572,8 @@ h3 {
   }
 
   .search-icon {
-    left: 480px;
-    right: 0px;
-    top: 27px;
+    right: 50px;
+    top: 70px;
   }
 
   .info {
@@ -594,6 +588,38 @@ h3 {
     color: white;
     right: 220px;
   }
+
+  .info {
+    color: white;
+    font-size: 15px;
+    font-weight: 300;
+    text-align: left;
+    position: relative;
+    left: 240px;
+  }
+
+  .wind,
+  .humidity {
+    font-weight: 500;
+  }
+
+  /* .wind {
+    color: white;
+    font-size: 20px;
+    font-weight: 300;
+    text-align: left;
+    position: relative;
+    right: -100px;
+  }
+
+  .humidity {
+    color: white;
+    font-size: 20px;
+    font-weight: 300;
+    text-align: left;
+    position: relative;
+    right: -100px;
+  } */
 }
 
 @media only screen and (max-width: 767px) and (orientation: portrait) {
@@ -693,42 +719,28 @@ h3 {
   }
 
   .info {
+    font-size: 14px;
+    color: grey;
+    text-align: left;
+    float: right;
+    position: relative;
     bottom: 50px;
     left: 0;
-  }
-
-  .wind {
-    color: grey;
-    text-align: right;
-    font-size: 14px;
-    font-weight: 300;
-    position: relative;
-    top: 10px;
-    right: 10px;
-  }
-
-  .humidity {
-    color: grey;
-    text-align: right;
-    font-size: 14px;
-    font-weight: 300;
-    position: relative;
-    top: 10px;
-    right: 10px;
-  }
-
-  .units {
-    display: inline-block;
-    left: 120px;
-    top: 20px;
+    top: -30px;
   }
 
   .temp {
     color: #42a5f5;
-    font-size: 65px;
+    font-size: 90px;
     display: inline-block;
-    text-align: center;
+    text-align: right;
     position: relative;
+  }
+
+  .units {
+    display: inline-block;
+    left: 117px;
+    top: -25px;
   }
 
   .weather-description {
@@ -739,7 +751,7 @@ h3 {
     margin: 0 auto;
     text-align: center;
     position: relative;
-    top: 20px;
+    top: -30px;
     text-transform: capitalize;
   }
 
@@ -750,7 +762,7 @@ h3 {
     margin: 0 auto;
     text-align: center;
     position: relative;
-    top: 15px;
+    top: -30px;
   }
 
   .icon {
@@ -758,10 +770,16 @@ h3 {
     color: #42a5f5;
     text-align: left;
     position: relative;
-    left: 70px;
+    left: 35px;
   }
 
   .search-icon {
+    right: 55px;
+    top: 0px;
+    color: grey;
+  }
+
+  /* .search-icon {
     font-size: 15px;
     color: grey;
     position: relative;
@@ -769,7 +787,7 @@ h3 {
     top: -43px;
 
     display: none !important;
-  }
+  } */
 
   .location-icon {
     border: none;
@@ -803,6 +821,7 @@ h3 {
     width: 300px;
     padding: 8px;
     padding-left: 15px;
+    padding-right: 40px;
     color: grey;
     border: 1px solid #42a5f5;
     margin: 10px;
