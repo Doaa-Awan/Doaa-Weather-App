@@ -356,6 +356,7 @@ h3 {
   color: #ff54a2;
   font-size: 30px;
   margin-top: 30px;
+  /* display: inline-flex; */
 }
 
 .forecast-col {
@@ -418,8 +419,8 @@ h3 {
   background-color: white;
 }
 
-.dissapear {
-  display: none;
+.hide {
+  display: none !important;
 }
 
 .cfmodblue {

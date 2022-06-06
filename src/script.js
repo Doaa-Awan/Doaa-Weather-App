@@ -206,5 +206,10 @@ search("St. Catharines");
 // let forecast = document.querySelector("#forecastList");
 // forecast.style.maxHeight = "0px";
 
-// let forecastBtn = document.querySelector("#forecastBtn");
-// forecastBtn.addEventListener("click", toggleForecast);
+function toggleForecast() {
+  let forecast = document.querySelector(".f1");
+  forecast.classList.toggle(".hide");
+}
+
+let forecastBtn = document.querySelector("#forecastBtn");
+forecastBtn.addEventListener("click", toggleForecast);
