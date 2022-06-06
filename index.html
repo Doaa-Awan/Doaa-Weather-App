@@ -39,7 +39,10 @@
             />
             <button class="fa-solid fa-magnifying-glass search-icon"></button>
           </form>
-          <button class="col-2 fa-solid fa-lightbulb lightBtn"></button>
+          <button
+            class="col-2 fa-solid fa-lightbulb lightBtn"
+            id="light"
+          ></button>
         </nav>
         <div class="row">
           <div class="col">
@@ -74,7 +77,9 @@
                     </li>
                   </ul>
                 </div>
-                <button class="forecast-button">Show Forecast</button>
+                <button id="forecastBtn" class="forecast-button">
+                  Show Forecast
+                </button>
               </div>
             </main>
           </div>
@@ -103,28 +108,28 @@
             </section>
           </div>
         </div>
-        <ul class="row forecast">
-          <li class="col forecast-col">
+        <ul class="row forecast" id="forecastList">
+          <li class="col forecast-col f1">
             <div id="f1">Fri</div>
             <div class="fa-solid fa-cloud-sun forecast-icon"></div>
             <div class="forecast-temp">8</div>
           </li>
-          <li class="col forecast-col">
+          <li class="col forecast-col f2">
             <div id="f1">Sat</div>
             <div class="fa-solid fa-cloud-sun forecast-icon"></div>
             <div class="forecast-temp">8</div>
           </li>
-          <li class="col forecast-col">
+          <li class="col forecast-col f3">
             <div id="f1">Sun</div>
             <div class="fa-solid fa-cloud-sun forecast-icon"></div>
             <div class="forecast-temp">8</div>
           </li>
-          <li class="col forecast-col">
+          <li class="col forecast-col f4">
             <div id="f1">Mon</div>
             <div class="fa-solid fa-cloud-sun forecast-icon"></div>
             <div class="forecast-temp">8</div>
           </li>
-          <li class="col forecast-col">
+          <li class="col forecast-col f5">
             <div id="f1">Tue</div>
             <div class="fa-solid fa-cloud-sun forecast-icon"></div>
             <div class="forecast-temp">8</div>

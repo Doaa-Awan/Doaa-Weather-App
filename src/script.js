@@ -2,20 +2,11 @@
 function displayWeather(response) {
   console.log(response);
 
-  let temperature = Math.round(response.data.main.temp);
-  let description = `${response.data.weather[0].description}`;
-  let feelsLike = Math.round(response.data.main.feels_like);
-  let windSpeed = Math.round(response.data.wind.speed);
-  let humidity = `${response.data.main.humidity}`;
-
-  let temp = document.querySelector("#tempNumber");
-  let weatherDescription = document.querySelector("#weather-description");
-  let feel = document.querySelector("#feels-like");
-  let cityElement = document.querySelector("#location");
-  let wind = document.querySelector("#wind-speed");
-  let humidityElement = document.querySelector("#humidity");
-  let iconElement = document.querySelector("#icon-element");
-
+  temperature = Math.round(response.data.main.temp);
+  description = `${response.data.weather[0].description}`;
+  feelsLike = Math.round(response.data.main.feels_like);
+  windSpeed = Math.round(response.data.wind.speed);
+  humidity = `${response.data.main.humidity}`;
   celsiusTemperature = response.data.main.temp;
 
   temp.innerHTML = `${temperature}°`;
@@ -104,30 +95,40 @@ function fahrenheit(event) {
   fahrenheitClick.classList.add("active");
 }
 
+//LIGHT BUTTON:
+
+function toggleLight() {
+  let f1 = document.querySelector(".f1");
+  let f2 = document.querySelector(".f2");
+  let f3 = document.querySelector(".f3");
+  let f4 = document.querySelector(".f4");
+  let f5 = document.querySelector(".f5");
+  lightBtn.classList.toggle("white");
+  section.classList.toggle("glow");
+  f1.classList.toggle("glow");
+  f2.classList.toggle("glow");
+  f3.classList.toggle("glow");
+  f4.classList.toggle("glow");
+  f5.classList.toggle("glow");
+}
+
 //CURRENT LOCATION BUTTON:
 function showLocalTemp(response) {
-  let temp = Math.round(response.data.main.temp);
-  let location = response.data.name;
-  let description = `${response.data.weather[0].description}`;
-  let feelsLike = Math.round(response.data.main.feels_like);
-  let windSpeed = Math.round(response.data.wind.speed);
-  let humidity = `${response.data.main.humidity}`;
+  let localCity = response.data.name;
+  let localCountry = response.data.sys.country;
+  let localTemp = Math.round(response.data.main.temp);
+  let localDescription = `${response.data.weather[0].description}`;
+  let localFeelsLike = Math.round(response.data.main.feels_like);
+  let localWindSpeed = Math.round(response.data.wind.speed);
+  let localHumidity = `${response.data.main.humidity}`;
 
-  let changeTemp = document.querySelector(`#tempNumber`);
-  let h1 = document.querySelector("#location");
-  let weatherDescription = document.querySelector("#weather-description");
-  let feel = document.querySelector("#feels-like");
-  let iconElement = document.querySelector("#icon-element");
-  let wind = document.querySelector("#wind-speed");
-  let humidityElement = document.querySelector("#humidity");
-
-  h1.innerHTML = `${location}, ${response.data.sys.country}`;
-  changeTemp.innerHTML = `${temp}°`;
-  weatherDescription.innerHTML = `${description}`;
-  feel.innerHTML = `${feelsLike}`;
+  cityElement.innerHTML = `${localCity}, ${localCountry}`;
+  temp.innerHTML = `${localTemp}°`;
+  weatherDescription.innerHTML = `${localDescription}`;
+  feel.innerHTML = `${localFeelsLike}`;
+  wind.innerHTML = `${localWindSpeed}`;
+  humidityElement.innerHTML = `${localHumidity}`;
   iconElement.setAttribute("class", `fa-solid fa-cloud-sun icon`);
-  wind.innerHTML = `${windSpeed}`;
-  humidityElement.innerHTML = `${humidity}`;
 }
 
 function retrievePosition(position) {
@@ -146,6 +147,21 @@ function getCurrentPosition() {
 
 //GLOBAL VARIABLES:
 
+let temperature = null;
+let description = null;
+let feelsLike = null;
+let windSpeed = null;
+let humidity = null;
+let celsiusTemperature = null;
+
+let cityElement = document.querySelector("#location");
+let temp = document.querySelector("#tempNumber");
+let weatherDescription = document.querySelector("#weather-description");
+let feel = document.querySelector("#feels-like");
+let wind = document.querySelector("#wind-speed");
+let humidityElement = document.querySelector("#humidity");
+let iconElement = document.querySelector("#icon-element");
+
 let searchBar = document.querySelector("#search-form");
 searchBar.addEventListener("submit", handleSubmit);
 
@@ -159,8 +175,6 @@ currentTime.innerHTML = formatTime(now);
 let refreshButton = document.querySelector("#refresh");
 refreshButton.addEventListener("click", reload, false);
 
-let celsiusTemperature = null;
-
 let celsiusClick = document.querySelector("#c");
 celsiusClick.addEventListener("click", celsius);
 
@@ -170,4 +184,23 @@ fahrenheitClick.addEventListener("click", fahrenheit);
 let localButton = document.querySelector("#location-button");
 localButton.addEventListener("click", getCurrentPosition);
 
+let lightBtn = document.querySelector("#light");
+lightBtn.addEventListener("click", toggleLight);
+
+let section = document.querySelector("section");
+
 search("St. Catharines");
+
+// function toggleForecast() {
+//   if (forecast.style.maxHeight == "0px") {
+//     forecast.style.maxHeight = "400px";
+//   } else {
+//     forecast.style.maxHeight = "0px";
+//   }
+// }
+
+// let forecast = document.querySelector("#forecastList");
+// forecast.style.maxHeight = "0px";
+
+// let forecastBtn = document.querySelector("#forecastBtn");
+// forecastBtn.addEventListener("click", toggleForecast);

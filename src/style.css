@@ -44,6 +44,7 @@ section {
   background-color: rgba(248, 248, 248, 0.7);
   margin-right: 100px;
   margin-top: 30px;
+  transition: all 200ms ease-in-out;
 }
 
 section:hover {
@@ -391,9 +392,17 @@ h3 {
   left: -200px;
 }
 
-.lightBtn:hover {
+.white {
   color: white;
 }
+
+.glow {
+  background-color: white;
+}
+
+/* .lightBtn:hover {
+  color: white;
+} */
 
 .code-link {
   font-size: 15px;
