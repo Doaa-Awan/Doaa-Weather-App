@@ -636,24 +636,42 @@ h3 {
   .weather-app {
     display: block;
     margin: auto;
-    max-width: 400px;
+    width: 330px;
+    height: auto;
     border: 1px solid rgba(128, 128, 128, 0.5);
-    padding: 20px;
+    padding-top: 20px;
+
+    padding-left: 10px;
+    padding-right: 10px;
     border-radius: 30px;
     background: white;
     overflow: visible;
   }
 
+  /* .weather-app {
+    height: 100%;
+    width: 767px;
+    padding-left: 0;
+    border: 1px solid blue;
+  }
+
+  .weather-app {
+  min-height: 100vh;
+  width: 1300px;
+  padding-left: 8%;
+  margin: 0 auto;
+} */
+
   body {
     margin-top: 60px;
     margin-bottom: 60px;
-    min-height: 100px;
+
     width: 100%;
   }
 
   main {
-    padding-left: 15px;
-    padding-top: 15px;
+    padding-left: 5px;
+    padding-top: 0px;
     position: relative;
     top: -30px;
   }
@@ -666,8 +684,8 @@ h3 {
     border: 2px solid #42a5f5;
     border-radius: 50%;
     max-width: 100%;
-    width: 300px;
-    height: 300px;
+    width: 250px;
+    height: 250px;
     top: 0px;
     left: 0;
     right: 0px;
@@ -675,7 +693,7 @@ h3 {
   }
 
   h1 {
-    font-size: 30px;
+    font-size: 25px;
     font-weight: 500;
     color: #42a5f5;
     padding: none;
@@ -768,17 +786,9 @@ h3 {
     top: -30px;
   }
 
-  .icon {
-    font-size: 70px;
-    color: #42a5f5;
-    text-align: left;
-    position: relative;
-    left: 35px;
-  }
-
   .search-icon {
-    right: 55px;
-    top: 0px;
+    right: -270px;
+    top: -40px;
     color: grey;
   }
 
@@ -837,19 +847,19 @@ h3 {
     margin-bottom: 20px;
     text-align: center;
     color: rgba(66, 165, 245, 0.7);
-    font-size: 20px;
+    font-size: 15px;
     position: relative;
     bottom: 20px;
     left: 8px;
     border: none;
-    background: white;
+    background: transparent;
   }
 
   .code-link {
     font-size: 10px;
-    position: relative;
-    top: 50px;
-    right: 0;
+    position: absolute;
+    top: 750px;
+    right: 200px;
     color: grey;
   }
 
