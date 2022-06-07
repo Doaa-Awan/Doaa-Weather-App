@@ -624,17 +624,28 @@ h3 {
 }
 
 @media only screen and (max-width: 767px) and (orientation: portrait) {
+  * {
+    box-sizing: none;
+  }
+
   .weather-app {
+    display: block;
+    margin: auto;
+
     max-width: 400px;
+
     border: 1px solid rgba(128, 128, 128, 0.5);
     padding: 20px;
     border-radius: 30px;
     background: white;
+    overflow: auto;
   }
 
   body {
-    margin-top: 40px;
-    margin-bottom: 40px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    min-height: 100px;
+    width: 100%;
   }
 
   main {
@@ -662,7 +673,7 @@ h3 {
   }
 
   h1 {
-    font-size: 35px;
+    font-size: 30px;
     font-weight: 500;
     color: #42a5f5;
     padding: none;
@@ -693,10 +704,9 @@ h3 {
   }
 
   .videoContainer {
-    background-size: auto;
     /* cover */
     background: white;
-    max-height: auto;
+    overflow: auto;
   }
 
   .date {
@@ -732,7 +742,7 @@ h3 {
 
   .temp {
     color: #42a5f5;
-    font-size: 90px;
+    font-size: 70px;
     display: inline-block;
     text-align: right;
     position: relative;
