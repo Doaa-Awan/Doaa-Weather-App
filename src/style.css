@@ -393,6 +393,10 @@ h3 {
   color: #ff54a2;
 }
 
+/* .switch {
+  display: none !important;
+} */
+
 /* .lightGlow {
   content: "";
   width: 20px;
@@ -678,7 +682,7 @@ h3 {
   .search-icon {
     font-size: 15px;
     color: grey;
-    right: -257px;
+    right: -250px;
     top: -32px;
   }
 
@@ -814,6 +818,7 @@ h3 {
     border: none;
     background: transparent;
     color: rgba(66, 165, 245, 0.7);
+    /* #42a5f5; */
     text-align: center;
     font-size: 18px;
     width: 44px;

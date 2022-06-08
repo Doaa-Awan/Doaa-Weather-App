@@ -98,22 +98,24 @@ function fahrenheit(event) {
 //LIGHT BUTTON:
 
 function toggleLight() {
-  let f1 = document.querySelector(".f1");
-  let f2 = document.querySelector(".f2");
-  let f3 = document.querySelector(".f3");
-  let f4 = document.querySelector(".f4");
-  let f5 = document.querySelector(".f5");
+  // let f1 = document.querySelector(".f1");
+  // let f2 = document.querySelector(".f2");
+  // let f3 = document.querySelector(".f3");
+  // let f4 = document.querySelector(".f4");
+  // let f5 = document.querySelector(".f5");
   let nameSigned = document.querySelector(".code-link");
   let link = document.querySelector(".link");
   lightBtn.classList.toggle("white");
   section.classList.toggle("glow");
-  f1.classList.toggle("glow");
-  f2.classList.toggle("glow");
-  f3.classList.toggle("glow");
-  f4.classList.toggle("glow");
-  f5.classList.toggle("glow");
+  // f1.classList.toggle("glow");
+  // f2.classList.toggle("glow");
+  // f3.classList.toggle("glow");
+  // f4.classList.toggle("glow");
+  // f5.classList.toggle("glow");
   nameSigned.classList.toggle("white");
   link.classList.toggle("white");
+
+  document.querySelectorAll(`.f1`).forEach((el) => el.classList.toggle(`glow`));
 }
 
 //CURRENT LOCATION BUTTON:
@@ -148,6 +150,33 @@ function retrievePosition(position) {
 function getCurrentPosition() {
   navigator.geolocation.getCurrentPosition(retrievePosition);
 }
+
+//FORECAST:
+
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecastList");
+  let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+      <div class="col forecast-col f1">
+        <div id="f1">${day}</div>
+        <div class="fa-solid fa-cloud-sun forecast-icon"></div>
+        <div class="forecast-temp">8</div>
+      </div>`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+
+  forecastElement.innerHTML = forecastHTML;
+}
+
+displayForecast();
+
+// let forecastBtn = document.querySelector("#forecastBtn");
+// forecastBtn.addEventListener("click", displayForecast);
 
 //GLOBAL VARIABLES:
 
@@ -206,10 +235,10 @@ search("St. Catharines");
 // let forecast = document.querySelector("#forecastList");
 // forecast.style.maxHeight = "0px";
 
-function toggleForecast() {
-  let forecast = document.querySelector(".f1");
-  forecast.classList.toggle(".hide");
-}
+// function toggleForecast() {
+//   let forecast = document.querySelector(".f1");
+//   forecast.classList.toggle(".hide");
+// }
 
-let forecastBtn = document.querySelector("#forecastBtn");
-forecastBtn.addEventListener("click", toggleForecast);
+// let forecastBtn = document.querySelector("#forecastBtn");
+// forecastBtn.addEventListener("click", toggleForecast);
