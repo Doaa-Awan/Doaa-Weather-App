@@ -27,127 +27,129 @@
       </video>
 
       <div class="weather-app">
-        <nav class="row">
-          <form class="col" id="search-form">
-            <input
-              type="search"
-              placeholder="Search for a city"
-              autocomplete="off"
-              autofocus
-              id="search-value"
-              class="search-bar"
-            />
-            <button class="fa-solid fa-magnifying-glass search-icon"></button>
-          </form>
-          <button
-            class="col-2 fa-solid fa-lightbulb lightBtn"
-            id="light"
-          ></button>
-        </nav>
-        <div class="row">
-          <div class="col">
-            <main>
-              <div class="mainLine">
-                <button
-                  id="location-button"
-                  class="fa-solid fa-location-dot location-icon"
-                ></button>
-                <h1 id="location">St. Catharines</h1>
-                <h2>
-                  Current Temperature
+        <div class="container">
+          <nav class="row">
+            <form class="col" id="search-form">
+              <input
+                type="search"
+                placeholder="Search for a city"
+                autocomplete="off"
+                autofocus
+                id="search-value"
+                class="search-bar"
+              />
+              <button class="fa-solid fa-magnifying-glass search-icon"></button>
+            </form>
+            <button
+              class="col-2 fa-solid fa-lightbulb lightBtn"
+              id="light"
+            ></button>
+          </nav>
+          <div class="row">
+            <div class="col">
+              <main>
+                <div class="mainLine">
                   <button
-                    id="refresh"
-                    class="fa-solid fa-arrow-rotate-right refresh-icon"
-                    onClick="window.location.reload();"
+                    id="location-button"
+                    class="fa-solid fa-location-dot location-icon"
                   ></button>
-                </h2>
-                <ul class="date">
-                  <li class="current-day">Monday</li>
-                  <li class="current-time">12:45</li>
-                </ul>
-                <div class="info">
-                  <ul>
-                    <li>
-                      <span class="wind">Wind:</span>
-                      <span id="wind-speed">23 </span> km/h
-                    </li>
-                    <li>
-                      <span class="humidity">Humidity: </span>
-                      <span id="humidity">83 </span> %
-                    </li>
+                  <h1 id="location">St. Catharines</h1>
+                  <h2>
+                    Current Temperature
+                    <button
+                      id="refresh"
+                      class="fa-solid fa-arrow-rotate-right refresh-icon"
+                      onClick="window.location.reload();"
+                    ></button>
+                  </h2>
+                  <ul class="date">
+                    <li class="current-day">Monday</li>
+                    <li class="current-time">12:45</li>
                   </ul>
+                  <div class="info">
+                    <ul>
+                      <li>
+                        <span class="wind">Wind:</span>
+                        <span id="wind-speed">23 </span> km/h
+                      </li>
+                      <li>
+                        <span class="humidity">Humidity: </span>
+                        <span id="humidity">83 </span> %
+                      </li>
+                    </ul>
+                  </div>
+                  <button id="forecastBtn" class="forecast-button">
+                    Show Forecast
+                  </button>
                 </div>
-                <button id="forecastBtn" class="forecast-button">
-                  Show Forecast
-                </button>
-              </div>
-            </main>
+              </main>
+            </div>
+            <div class="col">
+              <section>
+                <h3>TODAY</h3>
+                <div class="temp" id="tempNumber">13°</div>
+                <img src="#" alt="" class="icon" id="icon-element" />
+                <!-- <i class="fa-solid fa-cloud-sun icon" id="icon-element"></i> -->
+                <p class="weather-description" id="weather-description">
+                  Mostly Cloudy
+                </p>
+                <p class="feels-like">
+                  Feels like <span id="feels-like">13</span>°
+                </p>
+                <div class="units">
+                  <a href="#" class="celsius active" id="c">°C</a>
+                  <span class="cfLineBreak">|</span>
+                  <a href="#" class="fahrenheit" id="f">°F</a>
+                </div>
+              </section>
+            </div>
           </div>
-          <div class="col">
-            <section>
-              <h3>TODAY</h3>
-              <div class="temp" id="tempNumber">13°</div>
-              <img src="#" alt="" class="icon" id="icon-element" />
-              <!-- <i class="fa-solid fa-cloud-sun icon" id="icon-element"></i> -->
-              <p class="weather-description" id="weather-description">
-                Mostly Cloudy
-              </p>
-              <p class="feels-like">
-                Feels like <span id="feels-like">13</span>°
-              </p>
-              <div class="units">
-                <a href="#" class="celsius active" id="c">°C</a>
-                <span class="cfLineBreak">|</span>
-                <a href="#" class="fahrenheit" id="f">°F</a>
-              </div>
-            </section>
-          </div>
-        </div>
 
-        <ul class="row forecast" id="forecastList">
-          <li class="col forecast-col f1">
-            <div id="f1">Fri</div>
-            <div class="fa-solid fa-cloud-sun forecast-icon"></div>
-            <div class="forecast-temp">8</div>
-          </li>
-          <li class="col forecast-col f2">
-            <div id="f1">Sat</div>
-            <div class="fa-solid fa-cloud-sun forecast-icon"></div>
-            <div class="forecast-temp">8</div>
-          </li>
-          <li class="col forecast-col f3">
-            <div id="f1">Sun</div>
-            <div class="fa-solid fa-cloud-sun forecast-icon"></div>
-            <div class="forecast-temp">8</div>
-          </li>
-          <li class="col forecast-col f4">
-            <div id="f1">Mon</div>
-            <div class="fa-solid fa-cloud-sun forecast-icon"></div>
-            <div class="forecast-temp">8</div>
-          </li>
-          <li class="col forecast-col f5">
-            <div id="f1">Tue</div>
-            <div class="fa-solid fa-cloud-sun forecast-icon"></div>
-            <div class="forecast-temp">8</div>
-          </li>
-          <li class="col-xl-5">
-            <small class="col-12 code-link">
-              <a
-                href="https://github.com/Doaa-Awan/weather-project-ver2"
-                target="_blank"
-                class="link"
-                >Open-Source Code</a
-              >
-              by Doaa Awan
-            </small>
-          </li>
-        </ul>
-        <footer>
-          <label class="switch">
-            <input type="checkbox" id="toggle" />
-            <span class="slider round"></span>
-          </label>
-        </footer>
+          <ul class="row forecast" id="forecastList">
+            <li class="col forecast-col f1">
+              <div id="f1">Fri</div>
+              <div class="fa-solid fa-cloud-sun forecast-icon"></div>
+              <div class="forecast-temp">8</div>
+            </li>
+            <li class="col forecast-col f2">
+              <div id="f1">Sat</div>
+              <div class="fa-solid fa-cloud-sun forecast-icon"></div>
+              <div class="forecast-temp">8</div>
+            </li>
+            <li class="col forecast-col f3">
+              <div id="f1">Sun</div>
+              <div class="fa-solid fa-cloud-sun forecast-icon"></div>
+              <div class="forecast-temp">8</div>
+            </li>
+            <li class="col forecast-col f4">
+              <div id="f1">Mon</div>
+              <div class="fa-solid fa-cloud-sun forecast-icon"></div>
+              <div class="forecast-temp">8</div>
+            </li>
+            <li class="col forecast-col f5">
+              <div id="f1">Tue</div>
+              <div class="fa-solid fa-cloud-sun forecast-icon"></div>
+              <div class="forecast-temp">8</div>
+            </li>
+            <li class="col-xl-5">
+              <small class="col-12 code-link">
+                <a
+                  href="https://github.com/Doaa-Awan/weather-project-ver2"
+                  target="_blank"
+                  class="link"
+                  >Open-Source Code</a
+                >
+                by Doaa Awan
+              </small>
+            </li>
+          </ul>
+          <footer>
+            <label class="switch">
+              <input type="checkbox" id="toggle" />
+              <span class="slider round"></span>
+            </label>
+          </footer>
+        </div>
       </div>
     </div>
 

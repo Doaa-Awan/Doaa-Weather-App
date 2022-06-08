@@ -1,8 +1,6 @@
 * {
-  /* margin: 0;
-  padding: 0; */
   font-family: "Poppins", sans-serif;
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
 }
 
 ul {
@@ -19,7 +17,6 @@ h1 {
   color: #fff;
   font-weight: 600;
   transition: 0.5s;
-
   padding-left: 30px;
 }
 
@@ -146,11 +143,9 @@ h3 {
 .location-icon {
   display: block;
   float: left;
-
   margin-right: 20px;
   padding-top: 13px;
   padding-right: 15px;
-
   height: 30px;
   width: 25px;
   font-size: 32px;
@@ -158,7 +153,6 @@ h3 {
   background-color: transparent;
   border: none;
   cursor: pointer;
-
   transition: 0.5s;
 }
 
@@ -232,32 +226,6 @@ h3 {
 .humidity {
   font-weight: 500;
 }
-/* 
-#wind-speed {
-  font-weight: bold;
-}
-
-#humidity{
-  font-weight: bold;
-} */
-
-/* .wind {
-  color: white;
-  font-size: 20px;
-  font-weight: 300;
-  text-align: left;
-  position: relative;
-  right: -100px;
-}
-
-.humidity {
-  color: white;
-  font-size: 20px;
-  font-weight: 300;
-  text-align: left;
-  position: relative;
-  right: -100px;
-} */
 
 /* TEMP SECTION CIRCLE */
 
@@ -267,14 +235,6 @@ h3 {
   left: 20px;
   height: 200px;
 }
-
-/* .icon {
-  font-size: 90px;
-  color: #ff54a2;
-  display: inline-block;
-  position: relative;
-  left: 70px;
-} */
 
 .temp {
   color: #42a5f5;
@@ -294,8 +254,6 @@ h3 {
   text-transform: capitalize;
   position: relative;
   bottom: 20px;
-
-  /* margin-top: 10px; */
   margin-bottom: 0;
 }
 
@@ -521,10 +479,6 @@ h3 {
     height: 150px;
   }
 
-  /* .icon {
-    font-size: 70px;
-  } */
-
   .location-icon {
     font-size: 25px;
     padding-top: 7px;
@@ -625,8 +579,8 @@ h3 {
 
 @media only screen and (max-width: 767px) and (orientation: portrait) {
   body {
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin-top: 40px;
+    margin-bottom: 40px;
     width: 100%;
   }
 
@@ -682,24 +636,25 @@ h3 {
   }
 
   .videoBG {
-    display: none;
+    display: none !important;
   }
 
   .videoContainer {
-    background: white;
+    background: transparent;
     overflow: visible;
+    height: auto;
+    display: block;
   }
 
   .weather-app {
     width: 330px;
     min-height: auto;
- 
-    overflow: visible;
     background: white;
     border: 1px solid rgba(128, 128, 128, 0.5);
     box-shadow: 0 0 10px #9ecaed;
     border-radius: 30px;
     padding-top: 20px;
+    padding-bottom: 50px;
     padding-left: 10px;
     padding-right: 10px;
   }
@@ -760,8 +715,8 @@ h3 {
     font-size: 13px;
   }
 
-  .refresh-icon:hover{
-    color: rgba(66, 165, 245);
+  .refresh-icon:hover {
+    -webkit-text-stroke: 1px #42a5f5;
   }
 
   .date {
@@ -785,7 +740,7 @@ h3 {
   }
 
   .info {
-    font-size: 14px;
+    font-size: 12px;
     color: grey;
     text-align: left;
     float: right;
@@ -853,7 +808,6 @@ h3 {
   .forecast {
     margin-top: 15px;
     padding: 10px;
-   
   }
 
   .forecast-col {
