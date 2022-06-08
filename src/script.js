@@ -222,7 +222,7 @@ lightBtn.addEventListener("click", toggleLight);
 
 let section = document.querySelector("section");
 
-search("St. Catharines");
+search("Niagara Falls");
 
 // function toggleForecast() {
 //   if (forecast.style.maxHeight == "0px") {
