@@ -21,9 +21,9 @@
     <link rel="stylesheet" href="src/style.css" />
   </head>
   <body>
-    <div class="videoContainer">
-      <video autoplay loop muted plays-inline class="videoBG">
-        <source src="images/video.mp4" type="video/mp4" />
+    <div class="videoContainer bgImg">
+      <video autoplay loop muted plays-inline class="videoBG" id="vid">
+        <source id="src" src="images/video.mp4" type="video/mp4" />
       </video>
 
       <div class="weather-app">
@@ -40,10 +40,9 @@
               />
               <button class="fa-solid fa-magnifying-glass search-icon"></button>
             </form>
-            <button
-              class="col-2 fa-solid fa-lightbulb lightBtn"
-              id="light"
-            ></button>
+            <button class="col-2 fa-solid fa-lightbulb lightBtn" id="light">
+              <!-- <audio id="audio" src="images/click.mp3" autostart="false"></audio> -->
+            </button>
           </nav>
           <div class="row">
             <div class="col">
@@ -78,9 +77,12 @@
                       </li>
                     </ul>
                   </div>
-                  <button id="forecastBtn" class="forecast-button">
+                  <button id="blueBtn" class="blueBtn"></button>
+                  <button id="yellowBtn" class="yellowBtn"></button>
+                  <button id="greenBtn" class="greenBtn"></button>
+                  <!-- <button id="forecastBtn" class="forecast-button">
                     Show Forecast
-                  </button>
+                  </button> -->
                 </div>
               </main>
             </div>
@@ -106,31 +108,7 @@
           </div>
 
           <div class="forecast" id="forecastList"></div>
-          <!-- <li class="col forecast-col f1">
-              <div id="f1">Fri</div>
-              <div class="fa-solid fa-cloud-sun forecast-icon"></div>
-              <div class="forecast-temp">8</div>
-            </li>
-            <li class="col forecast-col f2">
-              <div id="f1">Sat</div>
-              <div class="fa-solid fa-cloud-sun forecast-icon"></div>
-              <div class="forecast-temp">8</div>
-            </li>
-            <li class="col forecast-col f3">
-              <div id="f1">Sun</div>
-              <div class="fa-solid fa-cloud-sun forecast-icon"></div>
-              <div class="forecast-temp">8</div>
-            </li>
-            <li class="col forecast-col f4">
-              <div id="f1">Mon</div>
-              <div class="fa-solid fa-cloud-sun forecast-icon"></div>
-              <div class="forecast-temp">8</div>
-            </li>
-            <li class="col forecast-col f5">
-              <div id="f1">Tue</div>
-              <div class="fa-solid fa-cloud-sun forecast-icon"></div>
-              <div class="forecast-temp">8</div>
-            </li> -->
+
           <div class="col-xl-5">
             <small class="col-12 code-link">
               <a
@@ -143,12 +121,14 @@
             </small>
           </div>
 
-          <footer>
-            <label class="switch">
-              <input type="checkbox" id="toggle" />
-              <span class="slider round"></span>
-            </label>
-          </footer>
+          <!-- <footer>
+            <button id="yellowBtn" class="yellowBtn"></button>
+            <button id="blueBtn" class="blueBtn"></button>
+          </footer> -->
+          <label class="switch">
+            <input type="checkbox" id="toggle" />
+            <span class="slider round"></span>
+          </label>
         </div>
       </div>
     </div>

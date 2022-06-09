@@ -73,8 +73,38 @@ function displayForecast(response) {
   forecastElement.innerHTML = forecastHTML;
 }
 
+function changeBgYellow() {
+  s.src = "images/yellow.mp4";
+  v.load();
+  v.play();
+  videoContainer.classList.remove("bgImg");
+  videoContainer.classList.add("lightBgImg");
+}
+
+function changeBgBlue() {
+  s.src = "images/video.mp4";
+  v.load();
+  v.play();
+  videoContainer.classList.add("bgImg");
+  videoContainer.classList.remove("lightBgImg");
+}
+
+function changeBgGreen() {
+  s.src = "images/green.mp4";
+  v.load();
+  v.play();
+  videoContainer.classList.remove("bgImg");
+  videoContainer.classList.add("lightBgImg");
+}
+
 // let forecastBtn = document.querySelector("#forecastBtn");
-// forecastBtn.addEventListener("click", displayForecast);
+// forecastBtn.addEventListener("click", changeBG);
+let videoContainer = document.querySelector(".videoContainer");
+const v = document.getElementById("vid");
+const s = document.getElementById("src");
+document.getElementById("yellowBtn").onclick = changeBgYellow;
+document.getElementById("blueBtn").onclick = changeBgBlue;
+document.getElementById("greenBtn").onclick = changeBgGreen;
 
 function getForecast(coordinates) {
   console.log(coordinates);
@@ -161,6 +191,9 @@ function toggleLight() {
 
   lightBtn.classList.toggle("white");
   section.classList.toggle("glow");
+
+  // let audio = document.querySelector("#audio");
+  // audio.play();
 }
 
 //CURRENT LOCATION BUTTON:
