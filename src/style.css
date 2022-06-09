@@ -275,9 +275,9 @@ h3 {
 } */
 /* transition: all 2s ease-in-out; */
 
-.forecast-button:hover {
+/* .forecast-button:hover {
   background: linear-gradient(to right, #e36e8f, #8085d8);
-}
+} */
 
 /* WIND & HUMIDITY */
 
@@ -439,8 +439,9 @@ h3 {
 .code-link {
   font-size: 15px;
   position: relative;
-  top: 50px;
-  /* right: -650px; */
+
+  /* top: 50px; */
+  right: -700px;
   color: white;
   transition: all 200ms ease-in-out;
 }
@@ -525,6 +526,7 @@ h3 {
     width: 767px;
     padding-left: 0;
     border: 1px solid blue;
+    margin-bottom: 0;
   }
 
   h1 {
@@ -604,6 +606,7 @@ h3 {
 
   .forecast {
     margin-right: 0;
+    padding-top: 30px;
   }
 
   .forecast-col {
@@ -636,7 +639,7 @@ h3 {
   .code-link {
     font-size: 15px;
     position: relative;
-    top: -700px;
+    top: -650px;
     color: white;
     right: 0px;
   }
@@ -966,6 +969,11 @@ h3 {
   .yellowBtn {
     display: none !important;
   }
+
+  .pinkBtn {
+    display: none !important;
+  }
+
   .blueBtn {
     display: none !important;
   }
