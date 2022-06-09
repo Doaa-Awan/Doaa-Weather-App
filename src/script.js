@@ -1,7 +1,39 @@
+//FORECAST:
+
+function displayForecast(response) {
+  console.log(response.data.daily);
+  let forecastElement = document.querySelector("#forecastList");
+  let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+      <div class="col forecast-col f1">
+        <div id="f1">${day}</div>
+        <div class="fa-solid fa-cloud-sun forecast-icon"></div>
+        <div class="forecast-temp">8</div>
+      </div>`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+
+  forecastElement.innerHTML = forecastHTML;
+}
+
+// let forecastBtn = document.querySelector("#forecastBtn");
+// forecastBtn.addEventListener("click", displayForecast);
+
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "9d66353d7a075841285d6608a0acc09a";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
+}
+
 //CURRENT TEMPERATURE
 function displayWeather(response) {
-  console.log(response);
-
   temperature = Math.round(response.data.main.temp);
   description = `${response.data.weather[0].description}`;
   feelsLike = Math.round(response.data.main.feels_like);
@@ -20,6 +52,8 @@ function displayWeather(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", `${description}`);
+
+  getForecast(response.data.coord);
 }
 
 //SEARCH:
@@ -150,33 +184,6 @@ function retrievePosition(position) {
 function getCurrentPosition() {
   navigator.geolocation.getCurrentPosition(retrievePosition);
 }
-
-//FORECAST:
-
-function displayForecast() {
-  let forecastElement = document.querySelector("#forecastList");
-  let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
-  let forecastHTML = `<div class="row">`;
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
-      <div class="col forecast-col f1">
-        <div id="f1">${day}</div>
-        <div class="fa-solid fa-cloud-sun forecast-icon"></div>
-        <div class="forecast-temp">8</div>
-      </div>`;
-  });
-
-  forecastHTML = forecastHTML + `</div>`;
-
-  forecastElement.innerHTML = forecastHTML;
-}
-
-displayForecast();
-
-// let forecastBtn = document.querySelector("#forecastBtn");
-// forecastBtn.addEventListener("click", displayForecast);
 
 //GLOBAL VARIABLES:
 
