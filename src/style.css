@@ -332,6 +332,20 @@ h3 {
   transition: all 200ms ease-in-out;
 }
 
+.forecast-day{
+  font-weight: 400;
+}
+
+.forecast-temp{
+  font-weight: 500;
+}
+
+.forecast-temp-min{
+  color: grey;
+  font-size: 15px;
+  font-weight: 100;
+}
+
 .forecast-col:hover {
   color: #42a5f5;
 }
@@ -548,9 +562,9 @@ h3 {
   .code-link {
     font-size: 15px;
     position: relative;
-    top: -650px;
+    top: -700px;
     color: white;
-    right: 220px;
+    right: 0px;
   }
 
   .info {
@@ -817,13 +831,13 @@ h3 {
   .forecast {
     margin-top: 15px;
     padding: 10px;
+    margin-bottom: 60px;
   }
 
   .forecast-col {
     border: none;
     background: transparent;
-    color: rgba(66, 165, 245, 0.7);
-    /* #42a5f5; */
+    color: #42a5f5;
     text-align: center;
     font-size: 18px;
     width: 44px;
@@ -841,7 +855,7 @@ h3 {
     color: grey;
     position: relative;
     top: 30px;
-    right: 50px;
+    right: 0;
   }
 
   .search-bar:focus {

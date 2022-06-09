@@ -1,19 +1,71 @@
-//FORECAST:
+//CURRENT DAY
+
+function formatDay(date) {
+  let dayIndex = date.getDay();
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[dayIndex];
+  return `${day}`;
+}
+
+//CURRENT TIME
+
+function formatTime(time) {
+  let hours = time.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+
+  let minutes = time.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  return `${hours}:${minutes}`;
+}
+
+//FORECAST
+
+function formatForecastDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[day];
+}
 
 function displayForecast(response) {
-  console.log(response.data.daily);
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecastList");
-  let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
+
   let forecastHTML = `<div class="row">`;
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `
       <div class="col forecast-col f1">
-        <div id="f1">${day}</div>
-        <div class="fa-solid fa-cloud-sun forecast-icon"></div>
-        <div class="forecast-temp">8</div>
+        <div class="forecast-day" id="f1">${formatForecastDay(
+          forecastDay.dt
+        )}</div>
+        <div class="forecast-icon"> <img src="http://openweathermap.org/img/wn/${
+          forecastDay.weather[0].icon
+        }@2x.png"
+        width="60"/></div>
+        <div class="forecast-temp">${Math.round(
+          forecastDay.temp.max
+        )}° <br/><span class="forecast-temp-min"> ${Math.round(
+          forecastDay.temp.min
+        )}°</span></div>
+        
       </div>`;
+    }
   });
 
   forecastHTML = forecastHTML + `</div>`;
@@ -71,38 +123,6 @@ function handleSubmit(event) {
   search(searchInput.value);
 }
 
-//CURRENT DAY
-
-function formatDay(date) {
-  let dayIndex = date.getDay();
-  let days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
-  let day = days[dayIndex];
-  return `${day}`;
-}
-
-//CURRENT TIME
-
-function formatTime(time) {
-  let hours = time.getHours();
-  if (hours < 10) {
-    hours = `0${hours}`;
-  }
-
-  let minutes = time.getMinutes();
-  if (minutes < 10) {
-    minutes = `0${minutes}`;
-  }
-  return `${hours}:${minutes}`;
-}
-
 //REFRESH BUTTON:
 function reload() {
   reload = location.reload();
@@ -132,24 +152,15 @@ function fahrenheit(event) {
 //LIGHT BUTTON:
 
 function toggleLight() {
-  // let f1 = document.querySelector(".f1");
-  // let f2 = document.querySelector(".f2");
-  // let f3 = document.querySelector(".f3");
-  // let f4 = document.querySelector(".f4");
-  // let f5 = document.querySelector(".f5");
+  document.querySelectorAll(`.f1`).forEach((el) => el.classList.toggle(`glow`));
+
   let nameSigned = document.querySelector(".code-link");
   let link = document.querySelector(".link");
-  lightBtn.classList.toggle("white");
-  section.classList.toggle("glow");
-  // f1.classList.toggle("glow");
-  // f2.classList.toggle("glow");
-  // f3.classList.toggle("glow");
-  // f4.classList.toggle("glow");
-  // f5.classList.toggle("glow");
   nameSigned.classList.toggle("white");
   link.classList.toggle("white");
 
-  document.querySelectorAll(`.f1`).forEach((el) => el.classList.toggle(`glow`));
+  lightBtn.classList.toggle("white");
+  section.classList.toggle("glow");
 }
 
 //CURRENT LOCATION BUTTON:
