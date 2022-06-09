@@ -73,8 +73,8 @@ function displayForecast(response) {
   forecastElement.innerHTML = forecastHTML;
 }
 
-function changeBgYellow() {
-  s.src = "images/yellow.mp4";
+function changeBgPink() {
+  s.src = "images/pink.mp4";
   v.load();
   v.play();
   videoContainer.classList.remove("bgImg");
@@ -97,14 +97,23 @@ function changeBgGreen() {
   videoContainer.classList.add("lightBgImg");
 }
 
+function changeBgYellow() {
+  s.src = "images/yellow.mp4";
+  v.load();
+  v.play();
+  videoContainer.classList.remove("bgImg");
+  videoContainer.classList.add("lightBgImg");
+}
+
 // let forecastBtn = document.querySelector("#forecastBtn");
 // forecastBtn.addEventListener("click", changeBG);
 let videoContainer = document.querySelector(".videoContainer");
 const v = document.getElementById("vid");
 const s = document.getElementById("src");
-document.getElementById("yellowBtn").onclick = changeBgYellow;
+document.getElementById("pinkBtn").onclick = changeBgPink;
 document.getElementById("blueBtn").onclick = changeBgBlue;
 document.getElementById("greenBtn").onclick = changeBgGreen;
+document.getElementById("yellowBtn").onclick = changeBgYellow;
 
 function getForecast(coordinates) {
   console.log(coordinates);
@@ -184,10 +193,10 @@ function fahrenheit(event) {
 function toggleLight() {
   document.querySelectorAll(`.f1`).forEach((el) => el.classList.toggle(`glow`));
 
-  let nameSigned = document.querySelector(".code-link");
-  let link = document.querySelector(".link");
-  nameSigned.classList.toggle("white");
-  link.classList.toggle("white");
+  // let nameSigned = document.querySelector(".code-link");
+  // let link = document.querySelector(".link");
+  // nameSigned.classList.toggle("white");
+  // link.classList.toggle("white");
 
   lightBtn.classList.toggle("white");
   section.classList.toggle("glow");
