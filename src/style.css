@@ -52,10 +52,6 @@ h3 {
   font-weight: bold;
 }
 
-.blueBG {
-  color: rgba(66, 165, 245, 0.7);
-}
-
 .yellowBtn {
   background-color: transparent;
   border: 1px solid white;
@@ -63,10 +59,6 @@ h3 {
   width: 20px;
   border-radius: 50%;
   margin-right: 20px;
-}
-
-.yellowBtn:hover {
-  background-color: rgb(238, 238, 169);
 }
 
 .pinkBtn {
@@ -78,11 +70,16 @@ h3 {
   margin-right: 20px;
 }
 
-.pinkBtn:hover {
-  background-color: #cc788a;
+.blueBtn {
+  background-color: transparent;
+  border: 1px solid white;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  margin-right: 20px;
 }
 
-.blueBtn {
+.greenBtn {
   background-color: transparent;
   border: 1px solid white;
   height: 20px;
@@ -95,21 +92,28 @@ h3 {
   background-color: rgb(62, 111, 235);
 }
 
-.greenBtn {
-  background-color: transparent;
-  border: 1px solid white;
-  height: 20px;
-  width: 20px;
-  border-radius: 50%;
-  margin-right: 20px;
-}
-
 .greenBtn:hover {
   background-color: green;
 }
 
+.pinkBtn:hover {
+  background-color: #cc788a;
+}
+
+.yellowBtn:hover {
+  background-color: rgb(238, 238, 169);
+}
+
+.blueBG {
+  color: rgba(66, 165, 245, 0.7);
+}
+
 .noBgColor {
   background-image: none;
+}
+
+.bgImg {
+  background-image: linear-gradient(rgba(12, 3, 51, 0.8), rgba(12, 3, 51, 0.3));
 }
 
 .lightBgImg {
@@ -134,10 +138,6 @@ h3 {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-}
-
-.bgImg {
-  background-image: linear-gradient(rgba(12, 3, 51, 0.8), rgba(12, 3, 51, 0.3));
 }
 
 .videoBG {
@@ -259,25 +259,6 @@ h3 {
   font-family: sans-serif;
   line-height: 1.5;
 }
-
-/* .forecast-button {
-  width: 140px;
-  border: 0;
-  padding: 12px 10px;
-  outline: none;
-  color: #fff;
-  background: linear-gradient(to right, #fb5283, #42a5f5);
-  border-radius: 6px;
-  cursor: pointer;
-  position: relative;
-  right: 40px;
-
-} */
-/* transition: all 2s ease-in-out; */
-
-/* .forecast-button:hover {
-  background: linear-gradient(to right, #e36e8f, #8085d8);
-} */
 
 /* WIND & HUMIDITY */
 
@@ -423,6 +404,8 @@ h3 {
   color: #42a5f5;
 }
 
+/* BUTTONS */
+
 .lightBtn {
   font-size: 40px;
   color: rgba(248, 248, 248, 0.7);
@@ -434,27 +417,6 @@ h3 {
   top: 70px;
   left: -200px;
   transition: all 200ms ease-in-out;
-}
-
-.code-link {
-  font-size: 15px;
-  position: relative;
-
-  /* top: 50px; */
-  right: -700px;
-  color: white;
-  transition: all 200ms ease-in-out;
-}
-
-.link {
-  text-decoration: none;
-  color: white;
-  transition: all 200ms ease-in-out;
-}
-
-.link:hover {
-  /* color: #42a5f5; */
-  color: #ff54a2;
 }
 
 /* MOD LIST */
@@ -486,6 +448,48 @@ h3 {
 .switch {
   visibility: hidden;
 }
+
+/* GITHUB LINK */
+
+.code-link {
+  transition: all 200ms ease-in-out;
+  color: white;
+  font-size: 15px;
+  position: relative;
+  right: -700px;
+
+  /* top: 50px; */
+}
+
+.link {
+  text-decoration: none;
+  color: white;
+  transition: all 200ms ease-in-out;
+}
+
+.link:hover {
+  color: #ff54a2;
+  /* color: #42a5f5; */
+}
+
+/* .forecast-button {
+  width: 140px;
+  border: 0;
+  padding: 12px 10px;
+  outline: none;
+  color: #fff;
+  background: linear-gradient(to right, #fb5283, #42a5f5);
+  border-radius: 6px;
+  cursor: pointer;
+  position: relative;
+  right: 40px;
+
+} */
+/* transition: all 2s ease-in-out; */
+
+/* .forecast-button:hover {
+  background: linear-gradient(to right, #e36e8f, #8085d8);
+} */
 
 /* .lightGlow {
   content: "";

@@ -73,48 +73,6 @@ function displayForecast(response) {
   forecastElement.innerHTML = forecastHTML;
 }
 
-function changeBgPink() {
-  s.src = "images/pink.mp4";
-  v.load();
-  v.play();
-  videoContainer.classList.remove("bgImg");
-  videoContainer.classList.add("lightBgImg");
-}
-
-function changeBgBlue() {
-  s.src = "images/video.mp4";
-  v.load();
-  v.play();
-  videoContainer.classList.add("bgImg");
-  videoContainer.classList.remove("lightBgImg");
-}
-
-function changeBgGreen() {
-  s.src = "images/green.mp4";
-  v.load();
-  v.play();
-  videoContainer.classList.remove("bgImg");
-  videoContainer.classList.add("lightBgImg");
-}
-
-function changeBgYellow() {
-  s.src = "images/yellow.mp4";
-  v.load();
-  v.play();
-  videoContainer.classList.remove("bgImg");
-  videoContainer.classList.add("lightBgImg");
-}
-
-// let forecastBtn = document.querySelector("#forecastBtn");
-// forecastBtn.addEventListener("click", changeBG);
-let videoContainer = document.querySelector(".videoContainer");
-const v = document.getElementById("vid");
-const s = document.getElementById("src");
-document.getElementById("pinkBtn").onclick = changeBgPink;
-document.getElementById("blueBtn").onclick = changeBgBlue;
-document.getElementById("greenBtn").onclick = changeBgGreen;
-document.getElementById("yellowBtn").onclick = changeBgYellow;
-
 function getForecast(coordinates) {
   console.log(coordinates);
   let apiKey = "9d66353d7a075841285d6608a0acc09a";
@@ -192,17 +150,8 @@ function fahrenheit(event) {
 
 function toggleLight() {
   document.querySelectorAll(`.f1`).forEach((el) => el.classList.toggle(`glow`));
-
-  // let nameSigned = document.querySelector(".code-link");
-  // let link = document.querySelector(".link");
-  // nameSigned.classList.toggle("white");
-  // link.classList.toggle("white");
-
   lightBtn.classList.toggle("white");
   section.classList.toggle("glow");
-
-  // let audio = document.querySelector("#audio");
-  // audio.play();
 }
 
 //CURRENT LOCATION BUTTON:
@@ -237,6 +186,51 @@ function retrievePosition(position) {
 function getCurrentPosition() {
   navigator.geolocation.getCurrentPosition(retrievePosition);
 }
+
+//THEME BUTTONS:
+
+function changeBgBlue() {
+  s.src = "images/video.mp4";
+  v.load();
+  v.play();
+  videoContainer.classList.add("bgImg");
+  videoContainer.classList.remove("lightBgImg");
+}
+
+function changeBgPink() {
+  s.src = "images/pink.mp4";
+  v.load();
+  v.play();
+  videoContainer.classList.remove("bgImg");
+  videoContainer.classList.add("lightBgImg");
+}
+
+function changeBgGreen() {
+  s.src = "images/green.mp4";
+  v.load();
+  v.play();
+  videoContainer.classList.remove("bgImg");
+  videoContainer.classList.add("lightBgImg");
+  // let audio = document.querySelector("#audio");
+  // audio.play();
+}
+
+function changeBgYellow() {
+  s.src = "images/yellow.mp4";
+  v.load();
+  v.play();
+  v.muted = false;
+  videoContainer.classList.remove("bgImg");
+  videoContainer.classList.add("lightBgImg");
+}
+
+let videoContainer = document.querySelector(".videoContainer");
+const v = document.getElementById("vid");
+const s = document.getElementById("src");
+document.getElementById("pinkBtn").onclick = changeBgPink;
+document.getElementById("blueBtn").onclick = changeBgBlue;
+document.getElementById("greenBtn").onclick = changeBgGreen;
+document.getElementById("yellowBtn").onclick = changeBgYellow;
 
 //GLOBAL VARIABLES:
 
@@ -302,3 +296,15 @@ search("Niagara Falls");
 
 // let forecastBtn = document.querySelector("#forecastBtn");
 // forecastBtn.addEventListener("click", toggleForecast);
+
+// let refreshBtn = document.querySelector("#refresh");
+// refreshBtn.addEventListener("click", reload);
+
+// search();
+// displayWeather();
+// getForecast();
+// displayForecast();
+// formatForecastDay();
+// formatTime();
+// formatDay();
+// onClick = "window.location.reload();";
