@@ -49,7 +49,7 @@ h3 {
   color: #ff54a2;
   text-align: center;
   margin-top: 30px;
-  font-weight: bold;
+  /* font-weight: bold; */
 }
 
 #preloader {
@@ -76,6 +76,11 @@ h3 {
   position: relative;
   display: block;
   margin: 0 auto;
+
+  width: 25%;
+  bottom: 90px;
+  right: 5px;
+  z-index: -1;
 }
 
 .yellowBtn {
@@ -128,22 +133,6 @@ h3 {
 
 .yellowBtn:hover {
   background-color: rgb(238, 238, 169);
-}
-
-.blueBG {
-  color: rgba(66, 165, 245, 0.7);
-}
-
-.noBgColor {
-  background-image: none;
-}
-
-.bgImg {
-  background-image: linear-gradient(rgba(12, 3, 51, 0.8), rgba(12, 3, 51, 0.3));
-}
-
-.lightBgImg {
-  background-image: linear-gradient(rgba(12, 3, 51, 0.3), rgba(12, 3, 51, 0.3));
 }
 
 /* CONTAINER */
@@ -447,16 +436,12 @@ h3 {
 
 /* MOD LIST */
 
-.white {
-  color: white;
-}
-
-.glow {
-  background-color: white;
-}
-
 .hide {
   display: none !important;
+}
+
+.switch {
+  visibility: hidden;
 }
 
 .cfmodblue {
@@ -471,8 +456,39 @@ h3 {
   color: #ff54a2;
 }
 
-.switch {
-  visibility: hidden;
+.white {
+  color: white;
+}
+
+.glow {
+  background-color: white;
+}
+
+.whiteborder {
+  border: 2px solid white;
+}
+
+.blueBG {
+  /* background: rgba(66, 165, 245, 0.7); */
+  /* background: #42a5f5; */
+  background: #68aee7;
+}
+
+.blueBGC {
+  /* background-color: #42a5f5; */
+  background-color: #68aee7;
+}
+
+.noBgColor {
+  background-image: none;
+}
+
+.bgImg {
+  background-image: linear-gradient(rgba(12, 3, 51, 0.8), rgba(12, 3, 51, 0.3));
+}
+
+.lightBgImg {
+  background-image: linear-gradient(rgba(12, 3, 51, 0.3), rgba(12, 3, 51, 0.3));
 }
 
 /* GITHUB LINK */
@@ -708,6 +724,20 @@ h3 {
 }
 
 @media only screen and (max-width: 767px) and (orientation: portrait) {
+  :root {
+    /* #68aee7; */
+    /* #42a5f5; */
+    --clr-blue: #42a5f5;
+    --clr-white: white;
+    --clr-grey: grey;
+  }
+
+  .darkmode {
+    --clr-blue: white;
+    --clr-white: #68aee7;
+    --clr-grey: white;
+  }
+
   body {
     margin-top: 40px;
     margin-bottom: 40px;
@@ -725,8 +755,8 @@ h3 {
     display: block;
     margin: 0 auto;
     padding: 0;
-    background-color: white;
-    border: 2px solid #42a5f5;
+    background-color: var(--clr-white);
+    border: 2px solid var(--clr-blue);
     border-radius: 50%;
     max-width: 100%;
     width: 250px;
@@ -735,34 +765,40 @@ h3 {
     left: 0;
     right: 0px;
     bottom: 20px;
+    transition: all 200ms ease-in-out;
   }
 
   h1 {
     font-size: 25px;
     font-weight: 500;
-    color: #42a5f5;
+    color: var(--clr-blue);
     padding: none;
     text-align: left;
     padding-top: 0;
+    transition: all 200ms ease-in-out;
   }
 
   h1:hover {
-    -webkit-text-stroke: 1px #42a5f5;
+    -webkit-text-stroke: 1px var(--clr-blue);
     color: transparent;
+    transition: all 200ms ease-in-out;
   }
 
   h2 {
     font-size: 13px;
     font-weight: 400;
-    color: grey;
+    color: var(--clr-grey);
     text-align: left;
     padding-left: 10px;
+
+    transition: all 200ms ease-in-out;
   }
 
   h3 {
     font-weight: 500;
     font-size: 20px;
-    color: #42a5f5;
+    color: var(--clr-blue);
+    transition: all 200ms ease-in-out;
   }
 
   .videoBG {
@@ -779,7 +815,7 @@ h3 {
   .weather-app {
     width: 330px;
     min-height: auto;
-    background: white;
+    background: var(--clr-white);
     border: 1px solid rgba(128, 128, 128, 0.5);
     box-shadow: 0 0 10px #9ecaed;
     border-radius: 30px;
@@ -787,6 +823,8 @@ h3 {
     padding-bottom: 50px;
     padding-left: 10px;
     padding-right: 10px;
+
+    transition: all 200ms ease-in-out;
   }
 
   .search-bar {
@@ -794,8 +832,8 @@ h3 {
     padding: 8px;
     padding-left: 15px;
     padding-right: 40px;
-    color: grey;
-    border: 1px solid #42a5f5;
+    color: var(--clr-grey);
+    border: 1px solid var(--clr-blue);
     display: block;
     margin: 0 auto;
     margin-top: 5px;
@@ -803,13 +841,15 @@ h3 {
     position: relative;
     top: -1px;
     justify-content: center;
+    transition: all 200ms ease-in-out;
   }
 
   .search-icon {
     font-size: 15px;
-    color: grey;
-    right: -250px;
+    color: var(--clr-grey);
+    right: -245px;
     top: -32px;
+    transition: all 200ms ease-in-out;
   }
 
   .location-icon {
@@ -819,7 +859,7 @@ h3 {
     background-color: transparent;
     margin-left: 0px;
     margin-right: 0;
-    color: grey;
+    color: var(--clr-grey);
     font-size: 18px;
     cursor: pointer;
     display: block;
@@ -827,10 +867,11 @@ h3 {
     padding-top: 0px;
     padding-right: 0px;
     padding-left: 0;
+    transition: all 200ms ease-in-out;
   }
 
   .location-icon:hover {
-    -webkit-text-stroke: 1px grey;
+    -webkit-text-stroke: 1px var(--clr-grey);
     color: transparent;
   }
 
@@ -840,13 +881,14 @@ h3 {
     width: 15px;
     background: transparent;
     border: none;
-    color: grey;
+    color: var(--clr-grey);
     padding: 0;
     font-size: 13px;
+    transition: all 200ms ease-in-out;
   }
 
   .refresh-icon:hover {
-    -webkit-text-stroke: 1px #42a5f5;
+    -webkit-text-stroke: 1px var(--clr-blue);
   }
 
   .date {
@@ -857,21 +899,23 @@ h3 {
   .current-day {
     font-size: 20px;
     font-weight: 500;
-    color: rgba(66, 165, 245);
+    color: var(--clr-blue);
     line-height: 1;
     padding: 0;
+    transition: all 200ms ease-in-out;
   }
 
   .current-time {
     font-size: 19px;
-    color: rgba(66, 165, 245);
+    color: var(--clr-blue);
     font-family: sans-serif;
     line-height: 1.5;
+    transition: all 200ms ease-in-out;
   }
 
   .info {
     font-size: 12px;
-    color: grey;
+    color: var(--clr-grey);
     text-align: left;
     float: right;
     position: relative;
@@ -879,15 +923,17 @@ h3 {
     left: 0;
     top: -30px;
     padding-right: 10px;
+    transition: all 200ms ease-in-out;
   }
 
   .temp {
-    color: #42a5f5;
+    color: var(--clr-blue);
     font-size: 50px;
     display: inline-block;
     text-align: left;
     z-index: 1;
     position: relative;
+    transition: all 200ms ease-in-out;
   }
 
   .icon {
@@ -898,7 +944,7 @@ h3 {
   }
 
   .weather-description {
-    color: #42a5f5;
+    color: var(--clr-blue);
     font-size: 15px;
     font-weight: 600;
     display: block;
@@ -907,16 +953,18 @@ h3 {
     position: relative;
     top: -30px;
     text-transform: capitalize;
+    transition: all 200ms ease-in-out;
   }
 
   .feels-like {
-    color: grey;
+    color: var(--clr-grey);
     font-size: 13px;
     display: block;
     margin: 0 auto;
     text-align: center;
     position: relative;
     top: -30px;
+    transition: all 200ms ease-in-out;
   }
 
   .units {
@@ -944,7 +992,7 @@ h3 {
   .forecast-col {
     border: none;
     background: transparent;
-    color: #42a5f5;
+    color: var(--clr-blue);
     text-align: center;
     font-size: 18px;
     width: 44px;
@@ -955,22 +1003,27 @@ h3 {
     position: relative;
     bottom: 20px;
     left: 0;
+    transition: all 200ms ease-in-out;
   }
 
   .forecast-temp-min {
     bottom: 0;
+    color: var(--clr-grey);
+    transition: all 200ms ease-in-out;
   }
 
   .code-link {
     font-size: 10px;
-    color: grey;
+    color: var(--clr-grey);
     position: relative;
     top: 30px;
     right: 0;
+    transition: all 200ms ease-in-out;
   }
 
   .link {
-    color: #42a5f5;
+    color: var(--clr-blue);
+    transition: all 200ms ease-in-out;
   }
 
   .search-bar:focus {
@@ -980,12 +1033,13 @@ h3 {
   }
 
   ::placeholder {
-    color: grey;
+    color: var(--clr-grey);
     opacity: 1;
+    transition: all 200ms ease-in-out;
   }
 
   .forecast-col:hover {
-    color: #42a5f5;
+    color: var(--clr-blue);
   }
 
   .forecast-button {

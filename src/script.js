@@ -1,3 +1,4 @@
+//PRELOADER
 var loader = document.getElementById("preloader");
 window.addEventListener("load", function () {
   loader.style.display = "none";
@@ -117,6 +118,21 @@ function search(city) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
 
   axios.get(apiUrl).then(displayWeather);
+
+  //   $(document).ready(function(){
+  //   $.ajax({
+  //     type: "GET",
+  //     url: `${apiUrl}`,
+  //     dataType: "json",
+
+  //     beforeSend: function(){
+  //       $(#preloader).show();
+  //     },
+  //     complete:function(){
+  //       $(#preloader).hide();
+  //     }
+  //   })
+  // });
 }
 
 function handleSubmit(event) {
@@ -151,14 +167,6 @@ function fahrenheit(event) {
   fahrenheitClick.classList.add("active");
 }
 
-//LIGHT BUTTON:
-
-function toggleLight() {
-  document.querySelectorAll(`.f1`).forEach((el) => el.classList.toggle(`glow`));
-  lightBtn.classList.toggle("white");
-  section.classList.toggle("glow");
-}
-
 //CURRENT LOCATION BUTTON:
 function showLocalTemp(response) {
   let localCity = response.data.name;
@@ -190,6 +198,14 @@ function retrievePosition(position) {
 
 function getCurrentPosition() {
   navigator.geolocation.getCurrentPosition(retrievePosition);
+}
+
+//LIGHT BUTTON:
+
+function toggleLight() {
+  document.querySelectorAll(`.f1`).forEach((el) => el.classList.toggle(`glow`));
+  lightBtn.classList.toggle("white");
+  section.classList.toggle("glow");
 }
 
 //THEME BUTTONS:
@@ -236,6 +252,51 @@ document.getElementById("pinkBtn").onclick = changeBgPink;
 document.getElementById("blueBtn").onclick = changeBgBlue;
 document.getElementById("greenBtn").onclick = changeBgGreen;
 document.getElementById("yellowBtn").onclick = changeBgYellow;
+
+function toggleDark() {
+  let BG = document.querySelector(".weather-app");
+  BG.classList.toggle("darkmode");
+  //   let h1 = document.querySelector("h1");
+  //   h1.classList.toggle("white");
+  //   let section = document.querySelector("section");
+  //   section.classList.toggle("blueBGC");
+  //   section.classList.toggle("whiteborder");
+  //   let bar = document.querySelector(".search-bar");
+  //   bar.classList.toggle("glow");
+  //   bar.classList.toggle("whiteborder");
+  //   let h2 = document.querySelector("h2");
+  //   h2.classList.toggle("white");
+  //   let dayblue = document.querySelector(".temp");
+  //   dayblue.style.color = "white";
+  //   dayblue.style.color = "#42a5f5";
+}
+
+let switchBtn = document.querySelector("#toggle");
+switchBtn.addEventListener("click", toggleDark);
+
+// let darkMode = localStorage.getItem("darkMode");
+// const darkModeToggle = document.querySelector("#toggle");
+
+// const enableDarkMode = () => {
+//   let app = document.querySelector(".weather-app");
+//   app.classList.add("darkmode");
+//   localStorage.setItem("darkMode", "enabled");
+// };
+
+// const disableDarkMode = () => {
+//   let app = document.querySelector(".weather-app");
+//   app.classList.remove("darkmode");
+//   localStorage.setItem("darkMode", null);
+// };
+
+// darkModeToggle.addEventListener("click", () => {
+//   darkMode = localStorage.getItem("darkMode");
+//   if (darkMode !== "enabled") {
+//     enableDarkMode();
+//   } else {
+//     disableDarkMode();
+//   }
+// });
 
 //GLOBAL VARIABLES:
 
