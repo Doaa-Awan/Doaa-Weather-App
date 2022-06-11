@@ -146,26 +146,26 @@ function reload() {
   reload = location.reload();
 }
 
-//CELSIUS BUTTON:
-function celsius(event) {
-  event.preventDefault();
-  let temp = document.querySelector("#tempNumber");
-  temp.innerHTML = `${Math.round(celsiusTemperature)}°`;
+// //CELSIUS BUTTON:
+// function celsius(event) {
+//   event.preventDefault();
+//   let temp = document.querySelector("#tempNumber");
+//   temp.innerHTML = `${Math.round(celsiusTemperature)}°`;
 
-  fahrenheitClick.classList.remove("active");
-  celsiusClick.classList.add("active");
-}
+//   fahrenheitClick.classList.remove("active");
+//   celsiusClick.classList.add("active");
+// }
 
-//FAHRENHEIT BUTTON
-function fahrenheit(event) {
-  event.preventDefault();
-  let fahrenheitTemp = (celsiusTemperature * 9) / 5 + 32;
-  let temp = document.querySelector("#tempNumber");
-  temp.innerHTML = `${Math.round(fahrenheitTemp)}°`;
+// //FAHRENHEIT BUTTON
+// function fahrenheit(event) {
+//   event.preventDefault();
+//   let fahrenheitTemp = (celsiusTemperature * 9) / 5 + 32;
+//   let temp = document.querySelector("#tempNumber");
+//   temp.innerHTML = `${Math.round(fahrenheitTemp)}°`;
 
-  celsiusClick.classList.remove("active");
-  fahrenheitClick.classList.add("active");
-}
+//   celsiusClick.classList.remove("active");
+//   fahrenheitClick.classList.add("active");
+// }
 
 //CURRENT LOCATION BUTTON:
 function showLocalTemp(response) {
@@ -328,11 +328,11 @@ currentTime.innerHTML = formatTime(now);
 let refreshButton = document.querySelector("#refresh");
 refreshButton.addEventListener("click", reload, false);
 
-let celsiusClick = document.querySelector("#c");
-celsiusClick.addEventListener("click", celsius);
+// let celsiusClick = document.querySelector("#c");
+// celsiusClick.addEventListener("click", celsius);
 
-let fahrenheitClick = document.querySelector("#f");
-fahrenheitClick.addEventListener("click", fahrenheit);
+// let fahrenheitClick = document.querySelector("#f");
+// fahrenheitClick.addEventListener("click", fahrenheit);
 
 let localButton = document.querySelector("#location-button");
 localButton.addEventListener("click", getCurrentPosition);
