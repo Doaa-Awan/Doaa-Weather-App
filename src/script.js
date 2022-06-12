@@ -214,6 +214,8 @@ function changeBgBlue() {
   s.src = "images/video.mp4";
   v.load();
   v.play();
+  v.classList.remove("hide");
+  videoContainer.classList.remove("bgImgColor");
   videoContainer.classList.add("bgImg");
   videoContainer.classList.remove("lightBgImg");
 }
@@ -222,6 +224,8 @@ function changeBgPink() {
   s.src = "images/pink.mp4";
   v.load();
   v.play();
+  v.classList.remove("hide");
+  videoContainer.classList.remove("bgImgColor");
   videoContainer.classList.remove("bgImg");
   videoContainer.classList.add("lightBgImg");
 }
@@ -230,6 +234,8 @@ function changeBgGreen() {
   s.src = "images/green.mp4";
   v.load();
   v.play();
+  v.classList.remove("hide");
+  videoContainer.classList.remove("bgImgColor");
   videoContainer.classList.remove("bgImg");
   videoContainer.classList.add("lightBgImg");
   // let audio = document.querySelector("#audio");
@@ -238,11 +244,23 @@ function changeBgGreen() {
 
 function changeBgYellow() {
   s.src = "images/yellow.mp4";
+
   v.load();
   v.play();
   // v.muted = false;
+  v.classList.remove("hide");
+  videoContainer.classList.remove("bgImgColor");
   videoContainer.classList.remove("bgImg");
   videoContainer.classList.add("lightBgImg");
+}
+
+function changeBgColor() {
+  s.src = "#";
+  v.classList.add("hide");
+
+  videoContainer.classList.remove("bgImg");
+  videoContainer.classList.remove("lightBgImg");
+  videoContainer.classList.add("bgImgColor");
 }
 
 let videoContainer = document.querySelector(".videoContainer");
@@ -252,10 +270,12 @@ document.getElementById("pinkBtn").onclick = changeBgPink;
 document.getElementById("blueBtn").onclick = changeBgBlue;
 document.getElementById("greenBtn").onclick = changeBgGreen;
 document.getElementById("yellowBtn").onclick = changeBgYellow;
+document.getElementById("blankBtn").onclick = changeBgColor;
 
 function toggleDark() {
   let BG = document.querySelector(".weather-app");
   BG.classList.toggle("darkmode");
+  // BG.classList.toggle("bgImgColor");
 }
 
 let switchBtn = document.querySelector("#toggle");
