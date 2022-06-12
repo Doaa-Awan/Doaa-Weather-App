@@ -255,8 +255,10 @@ function changeBgYellow() {
 }
 
 function changeBgColor() {
-  s.src = "#";
+  s.src = "images/video.mp4";
   v.classList.add("hide");
+  v.pause();
+  // v.muted = true;
 
   videoContainer.classList.remove("bgImg");
   videoContainer.classList.remove("lightBgImg");
