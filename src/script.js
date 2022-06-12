@@ -1,10 +1,11 @@
-//PRELOADER
+//PRELOADER:
+
 var loader = document.getElementById("preloader");
 window.addEventListener("load", function () {
   loader.style.display = "none";
 });
 
-//CURRENT DAY
+//CURRENT DAY:
 
 function formatDay(date) {
   let dayIndex = date.getDay();
@@ -21,7 +22,7 @@ function formatDay(date) {
   return `${day}`;
 }
 
-//CURRENT TIME
+//CURRENT TIME:
 
 function formatTime(time) {
   let hours = time.getHours();
@@ -36,7 +37,7 @@ function formatTime(time) {
   return `${hours}:${minutes}`;
 }
 
-//FORECAST
+//FORECAST:
 
 function formatForecastDay(timestamp) {
   let date = new Date(timestamp * 1000);
@@ -87,7 +88,8 @@ function getForecast(coordinates) {
   axios.get(apiUrl).then(displayForecast);
 }
 
-//CURRENT TEMPERATURE
+//CURRENT TEMPERATURE:
+
 function displayWeather(response) {
   temperature = Math.round(response.data.main.temp);
   description = `${response.data.weather[0].description}`;
@@ -112,27 +114,13 @@ function displayWeather(response) {
 }
 
 //SEARCH:
+
 function search(city) {
   let units = `metric`;
   let apiKey = "9d66353d7a075841285d6608a0acc09a";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
 
   axios.get(apiUrl).then(displayWeather);
-
-  //   $(document).ready(function(){
-  //   $.ajax({
-  //     type: "GET",
-  //     url: `${apiUrl}`,
-  //     dataType: "json",
-
-  //     beforeSend: function(){
-  //       $(#preloader).show();
-  //     },
-  //     complete:function(){
-  //       $(#preloader).hide();
-  //     }
-  //   })
-  // });
 }
 
 function handleSubmit(event) {
@@ -142,32 +130,13 @@ function handleSubmit(event) {
 }
 
 //REFRESH BUTTON:
+
 function reload() {
   reload = location.reload();
 }
 
-// //CELSIUS BUTTON:
-// function celsius(event) {
-//   event.preventDefault();
-//   let temp = document.querySelector("#tempNumber");
-//   temp.innerHTML = `${Math.round(celsiusTemperature)}°`;
-
-//   fahrenheitClick.classList.remove("active");
-//   celsiusClick.classList.add("active");
-// }
-
-// //FAHRENHEIT BUTTON
-// function fahrenheit(event) {
-//   event.preventDefault();
-//   let fahrenheitTemp = (celsiusTemperature * 9) / 5 + 32;
-//   let temp = document.querySelector("#tempNumber");
-//   temp.innerHTML = `${Math.round(fahrenheitTemp)}°`;
-
-//   celsiusClick.classList.remove("active");
-//   fahrenheitClick.classList.add("active");
-// }
-
 //CURRENT LOCATION BUTTON:
+
 function showLocalTemp(response) {
   let localCity = response.data.name;
   let localCountry = response.data.sys.country;
@@ -183,7 +152,6 @@ function showLocalTemp(response) {
   feel.innerHTML = `${localFeelsLike}`;
   wind.innerHTML = `${localWindSpeed}`;
   humidityElement.innerHTML = `${localHumidity}`;
-  iconElement.setAttribute("class", `fa-solid fa-cloud-sun icon`);
 }
 
 function retrievePosition(position) {
@@ -238,16 +206,12 @@ function changeBgGreen() {
   videoContainer.classList.remove("bgImgColor");
   videoContainer.classList.remove("bgImg");
   videoContainer.classList.add("lightBgImg");
-  // let audio = document.querySelector("#audio");
-  // audio.play();
 }
 
 function changeBgYellow() {
   s.src = "images/yellow.mp4";
-
   v.load();
   v.play();
-  // v.muted = false;
   v.classList.remove("hide");
   videoContainer.classList.remove("bgImgColor");
   videoContainer.classList.remove("bgImg");
@@ -255,11 +219,8 @@ function changeBgYellow() {
 }
 
 function changeBgColor() {
-  s.src = "images/video.mp4";
   v.classList.add("hide");
   v.pause();
-  // v.muted = true;
-
   videoContainer.classList.remove("bgImg");
   videoContainer.classList.remove("lightBgImg");
   videoContainer.classList.add("bgImgColor");
@@ -274,20 +235,10 @@ document.getElementById("greenBtn").onclick = changeBgGreen;
 document.getElementById("yellowBtn").onclick = changeBgYellow;
 document.getElementById("blankBtn").onclick = changeBgColor;
 
-function toggleDark() {
-  let BG = document.querySelector(".weather-app");
-  BG.classList.toggle("darkmode");
-  // BG.classList.toggle("bgImgColor");
-}
-
-let switchBtn = document.querySelector("#toggle");
-switchBtn.addEventListener("click", toggleDark);
-
-// function audioTurnOff() {
-//   audioBtn.classList.toggle("audioBtnOff");
-// }
+//AUDIO BUTTON:
 
 let audioBtn = document.querySelector("#audioBtn");
+
 audioBtn.addEventListener("click", function () {
   audioBtn.classList.toggle("audioBtnOff");
   if (v.muted === true) {
@@ -296,6 +247,16 @@ audioBtn.addEventListener("click", function () {
     v.muted = true;
   }
 });
+
+//DARK MODE BUTTON (MOBILE VIEW):
+
+function toggleDark() {
+  let BG = document.querySelector(".weather-app");
+  BG.classList.toggle("darkmode");
+}
+
+let switchBtn = document.querySelector("#toggle");
+switchBtn.addEventListener("click", toggleDark);
 
 //GLOBAL VARIABLES:
 
@@ -327,12 +288,6 @@ currentTime.innerHTML = formatTime(now);
 let refreshButton = document.querySelector("#refresh");
 refreshButton.addEventListener("click", reload, false);
 
-// let celsiusClick = document.querySelector("#c");
-// celsiusClick.addEventListener("click", celsius);
-
-// let fahrenheitClick = document.querySelector("#f");
-// fahrenheitClick.addEventListener("click", fahrenheit);
-
 let localButton = document.querySelector("#location-button");
 localButton.addEventListener("click", getCurrentPosition);
 
@@ -342,34 +297,4 @@ lightBtn.addEventListener("click", toggleLight);
 let section = document.querySelector("section");
 
 search("Niagara Falls");
-
-// function toggleForecast() {
-//   if (forecast.style.maxHeight == "0px") {
-//     forecast.style.maxHeight = "400px";
-//   } else {
-//     forecast.style.maxHeight = "0px";
-//   }
-// }
-
-// let forecast = document.querySelector("#forecastList");
-// forecast.style.maxHeight = "0px";
-
-// function toggleForecast() {
-//   let forecast = document.querySelector(".f1");
-//   forecast.classList.toggle(".hide");
-// }
-
-// let forecastBtn = document.querySelector("#forecastBtn");
-// forecastBtn.addEventListener("click", toggleForecast);
-
-// let refreshBtn = document.querySelector("#refresh");
-// refreshBtn.addEventListener("click", reload);
-
-// search();
-// displayWeather();
-// getForecast();
-// displayForecast();
-// formatForecastDay();
-// formatTime();
-// formatDay();
-// onClick = "window.location.reload();";
+// showLocalTemp();
