@@ -240,7 +240,7 @@ function changeBgYellow() {
   s.src = "images/yellow.mp4";
   v.load();
   v.play();
-  v.muted = false;
+  // v.muted = false;
   videoContainer.classList.remove("bgImg");
   videoContainer.classList.add("lightBgImg");
 }
@@ -256,47 +256,24 @@ document.getElementById("yellowBtn").onclick = changeBgYellow;
 function toggleDark() {
   let BG = document.querySelector(".weather-app");
   BG.classList.toggle("darkmode");
-  //   let h1 = document.querySelector("h1");
-  //   h1.classList.toggle("white");
-  //   let section = document.querySelector("section");
-  //   section.classList.toggle("blueBGC");
-  //   section.classList.toggle("whiteborder");
-  //   let bar = document.querySelector(".search-bar");
-  //   bar.classList.toggle("glow");
-  //   bar.classList.toggle("whiteborder");
-  //   let h2 = document.querySelector("h2");
-  //   h2.classList.toggle("white");
-  //   let dayblue = document.querySelector(".temp");
-  //   dayblue.style.color = "white";
-  //   dayblue.style.color = "#42a5f5";
 }
 
 let switchBtn = document.querySelector("#toggle");
 switchBtn.addEventListener("click", toggleDark);
 
-// let darkMode = localStorage.getItem("darkMode");
-// const darkModeToggle = document.querySelector("#toggle");
+// function audioTurnOff() {
+//   audioBtn.classList.toggle("audioBtnOff");
+// }
 
-// const enableDarkMode = () => {
-//   let app = document.querySelector(".weather-app");
-//   app.classList.add("darkmode");
-//   localStorage.setItem("darkMode", "enabled");
-// };
-
-// const disableDarkMode = () => {
-//   let app = document.querySelector(".weather-app");
-//   app.classList.remove("darkmode");
-//   localStorage.setItem("darkMode", null);
-// };
-
-// darkModeToggle.addEventListener("click", () => {
-//   darkMode = localStorage.getItem("darkMode");
-//   if (darkMode !== "enabled") {
-//     enableDarkMode();
-//   } else {
-//     disableDarkMode();
-//   }
-// });
+let audioBtn = document.querySelector("#audioBtn");
+audioBtn.addEventListener("click", function () {
+  audioBtn.classList.toggle("audioBtnOff");
+  if (v.muted === true) {
+    v.muted = false;
+  } else if (v.muted === false) {
+    v.muted = true;
+  }
+});
 
 //GLOBAL VARIABLES:
 

@@ -51,6 +51,29 @@ h3 {
   margin-top: 30px;
   /* font-weight: bold; */
 }
+:root {
+  --white: transparent;
+  --pink: white;
+}
+
+.audioBtnOff {
+  --white: white;
+  --pink: #ff54a2;
+}
+
+.audioBtn {
+  float: right;
+  margin-right: 150px;
+  position: relative;
+  bottom: 70px;
+  right: 50px;
+  width: 140px;
+  height: 50px;
+  border-radius: 30px;
+  color: var(--pink);
+  border: 1px solid var(--pink);
+  background-color: var(--white);
+}
 
 #preloader {
   background: #fff no-repeat center center;
@@ -405,6 +428,7 @@ h3 {
 
 .forecast-temp {
   font-weight: 500;
+  text-align: center;
 }
 
 .forecast-temp-min {
@@ -413,6 +437,7 @@ h3 {
   font-weight: 100;
   position: relative;
   bottom: 10px;
+  text-align: center;
 }
 
 .forecast-col:hover {
@@ -866,7 +891,7 @@ h3 {
     border: 1px solid var(--clr-blue);
     display: block;
     margin: 0 auto;
-    margin-top: 5px;
+    margin-top: 10px;
     font-size: 13px;
     position: relative;
     top: -1px;
@@ -877,7 +902,7 @@ h3 {
   .search-icon {
     font-size: 15px;
     color: var(--clr-grey);
-    right: -245px;
+    right: -240px;
     top: -32px;
     transition: all 200ms ease-in-out;
   }
@@ -1093,6 +1118,10 @@ h3 {
   }
 
   .greenBtn {
+    display: none !important;
+  }
+
+  .audioBtn {
     display: none !important;
   }
 
