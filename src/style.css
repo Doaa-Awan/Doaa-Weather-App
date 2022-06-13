@@ -65,14 +65,15 @@ h3 {
   float: right;
   margin-right: 150px;
   position: relative;
-  bottom: 70px;
-  right: 50px;
+  bottom: 90px;
+  right: 10px;
   width: 140px;
   height: 50px;
   border-radius: 30px;
   color: var(--pink);
   border: 1px solid var(--pink);
   background-color: var(--white);
+  transition: all 200ms ease-in-out;
 }
 
 #preloader {
@@ -108,6 +109,7 @@ h3 {
 
 .bgImgColor {
   background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  /* background: linear-gradient(-45deg, #23a6d5, #23d5ab #ee7752, #e73c7e); */
   animation: change 10s ease-in-out infinite;
 
   width: 100%;
@@ -129,7 +131,7 @@ h3 {
   }
 }
 
-.blankBtn {
+.btns {
   background-color: transparent;
   border: 1px solid white;
   height: 20px;
@@ -140,9 +142,10 @@ h3 {
 
 .blankBtn:hover {
   background-color: white;
+  opacity: 0.7;
 }
 
-.yellowBtn {
+/* .yellowBtn {
   background-color: transparent;
   border: 1px solid white;
   height: 20px;
@@ -176,7 +179,7 @@ h3 {
   width: 20px;
   border-radius: 50%;
   margin-right: 20px;
-}
+} */
 
 .blueBtn:hover {
   background-color: rgb(62, 111, 235);
@@ -275,7 +278,7 @@ h3 {
 .mainLine::after {
   content: "";
   width: 10px;
-  height: 65%;
+  height: 70%;
   background: linear-gradient(#ff469f, #42a5f5);
   position: absolute;
   left: -40px;
@@ -494,8 +497,8 @@ h3 {
   width: 20px;
   padding: 0;
   position: relative;
-  top: 70px;
-  left: -200px;
+  top: 53px;
+  left: -160px;
   transition: all 200ms ease-in-out;
 }
 
@@ -632,16 +635,8 @@ h3 {
 }
 
 @media only screen and (max-width: 1200px) {
-  .weather-app {
-    height: 100%;
-    width: 767px;
-    padding-left: 0;
-    border: 1px solid blue;
-    margin-bottom: 0;
-  }
-
   h1 {
-    font-size: 35px;
+    font-size: 27px;
   }
 
   h2 {
@@ -656,40 +651,84 @@ h3 {
     position: relative;
     top: 100px;
 
-    width: 300px;
-    height: 300px;
+    width: 250px;
+    height: 250px;
 
     display: block;
     margin: 0 auto;
+  }
+
+  .weather-app {
+    height: 100%;
+    width: 767px;
+    padding-left: 0;
+    border: 1px solid blue;
+    margin-bottom: 0;
+  }
+
+  .bird {
+    margin-top: 30%;
+    width: 20%;
+  }
+
+  .loading-text {
+    width: 25%;
+    bottom: 40px;
+  }
+
+  .mainLine::after {
+    height: 70%;
+    top: 0px;
+  }
+
+  .code-link {
+    font-size: 13px;
+    position: relative;
+    top: -600px;
+    color: white;
+    right: 0px;
+    /* padding-bottom: 100px; */
+    /* margin-bottom: 100px; */
+  }
+
+  .audioBtn {
+    font-size: 13px;
+    height: 35px;
+    width: 80px;
+    margin-right: 0px;
+    bottom: 580px;
+    right: 110px;
+  }
+
+  .lightBtn {
+    font-size: 30px;
+    top: 13px;
+    left: -80px;
+  }
+
+  .search-icon {
+    right: 50px;
+    top: 70px;
+  }
+
+  .location-icon {
+    font-size: 20px;
+    padding-top: 2px;
+    /* padding-right: 10px; */
+    margin-right: 10px;
   }
 
   .refresh-icon {
     font-size: 15px;
   }
 
-  .temp {
-    font-size: 70px;
-    text-align: right;
-    left: 60px;
-    top: 0px;
-    /* top: 25px; */
-  }
-
-  .weather-description,
-  .feels-like {
-    bottom: 40px;
-  }
-
-  .icon {
-    bottom: 20px;
-    height: 150px;
-  }
-
-  .location-icon {
-    font-size: 25px;
-    padding-top: 7px;
-    padding-right: 10px;
-    margin: 0;
+  .btns {
+    background-color: transparent;
+    border: 1px solid white;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    margin-right: 20px;
   }
 
   .search-bar {
@@ -699,69 +738,14 @@ h3 {
     width: 400px;
   }
 
-  .forecast-button {
-    width: 100px;
-    font-size: 15px;
-    right: -40px;
-    bottom: 30px;
-    border-radius: 50%;
+  .icon {
+    bottom: 20px;
     height: 100px;
-    border: 2px solid white;
-    background: transparent;
   }
 
-  .mainLine::after {
-    height: 200px;
-    top: 5px;
-  }
-
-  .forecast {
-    margin-right: 0;
-    padding-top: 30px;
-  }
-
-  .forecast-col {
+  .current-day,
+  .current-time {
     font-size: 25px;
-    max-width: 100px;
-    left: 100px;
-  }
-
-  .units {
-    position: relative;
-    left: 115px;
-    top: -25px;
-  }
-
-  .lightBtn {
-    top: 60px;
-    left: -80px;
-  }
-
-  .search-icon {
-    right: 50px;
-    top: 70px;
-  }
-
-  .info {
-    position: relative;
-    left: 120px;
-  }
-
-  .code-link {
-    font-size: 15px;
-    position: relative;
-    top: -650px;
-    color: white;
-    right: 0px;
-  }
-
-  .info {
-    color: white;
-    font-size: 15px;
-    font-weight: 300;
-    text-align: left;
-    position: relative;
-    left: 240px;
   }
 
   .wind,
@@ -769,23 +753,45 @@ h3 {
     font-weight: 500;
   }
 
-  /* .wind {
+  .info {
     color: white;
-    font-size: 20px;
+    font-size: 15px;
     font-weight: 300;
     text-align: left;
     position: relative;
-    right: -100px;
+    left: 220px;
   }
 
-  .humidity {
-    color: white;
+  .temp {
+    font-size: 55px;
+    text-align: right;
+    left: 50px;
+    top: 10px;
+    margin-right: 20px;
+    /* top: 25px; */
+  }
+
+  .weather-description,
+  .feels-like {
+    bottom: 10px;
+    font-size: 15px;
+  }
+
+  .forecast {
+    margin-right: 0;
+    padding-top: 30px;
+  }
+
+  .forecast-day {
     font-size: 20px;
-    font-weight: 300;
-    text-align: left;
-    position: relative;
-    right: -100px;
-  } */
+  }
+
+  .forecast-col {
+    font-size: 25px;
+    max-width: 100px;
+    left: 80px;
+    height: 175px;
+  }
 }
 
 @media only screen and (max-width: 767px) and (orientation: portrait) {
@@ -799,18 +805,6 @@ h3 {
 
   .darkmode {
     --clr-blue: white;
-
-    /* --clr-white: #42a5f5; */
-    /* #ff3cac */
-    /* #2b86c5 */
-
-    /* #ff54a2 0%,
-      #562b7c 52%,
-      #42a5f5 100% */
-
-    /* #42a5f5 0%,
-      #562b7c 52%,
-      #ff54a2 100% */
     --clr-white: linear-gradient(
       -225deg,
 
@@ -818,6 +812,10 @@ h3 {
       #42a5f5 80%
     );
     --clr-grey: white;
+  }
+
+  .forecast-day {
+    font-size: 18px;
   }
 
   #preloader {
@@ -907,10 +905,13 @@ h3 {
   }
 
   h3 {
-    font-weight: 500;
+    font-weight: 600;
+
     font-size: 20px;
     color: var(--clr-blue);
     transition: all 200ms ease-in-out;
+    position: relative;
+    top: 10px;
   }
 
   .videoBG {
@@ -1006,6 +1007,7 @@ h3 {
   .date {
     position: relative;
     top: 15px;
+    padding-left: 5px;
   }
 
   .current-day {
@@ -1031,7 +1033,7 @@ h3 {
     text-align: left;
     float: right;
     position: relative;
-    bottom: 50px;
+    bottom: 45px;
     left: 0;
     top: -30px;
     padding-right: 10px;
@@ -1042,50 +1044,58 @@ h3 {
     color: var(--clr-blue);
     font-size: 50px;
     display: inline-block;
-    text-align: left;
+    text-align: right;
     z-index: 1;
     position: relative;
+
     transition: all 200ms ease-in-out;
+    margin: auto;
   }
 
   .icon {
     display: inline-block;
     position: relative;
-    left: 45px;
-    height: 100px;
+    left: 35px;
+    top: -5px;
+    height: 110px;
+    margin: 0 auto;
+  }
+
+  .weather-description,
+  .feels-like {
+    display: block;
+    margin: 0 auto;
+    top: -12px;
+    text-align: center;
+    position: relative;
+    transition: all 200ms ease-in-out;
   }
 
   .weather-description {
     color: var(--clr-blue);
-    font-size: 15px;
+    font-size: 18px;
     font-weight: 600;
-    display: block;
-    margin: 0 auto;
-    text-align: center;
-    position: relative;
-    top: -30px;
     text-transform: capitalize;
-    transition: all 200ms ease-in-out;
   }
 
   .feels-like {
     color: var(--clr-grey);
-    font-size: 13px;
-    display: block;
-    margin: 0 auto;
-    text-align: center;
-    position: relative;
-    top: -30px;
-    transition: all 200ms ease-in-out;
+    font-size: 15px;
+    /* display: block; */
+    /* margin: 0 auto; */
+    /* text-align: center; */
+    /* position: relative; */
+    /* top: -10px; */
+    /* transition: all 200ms ease-in-out; */
   }
 
-  .units {
+  /* .units {
     display: inline-block;
     left: 95px;
     top: -25px;
-  }
+  } */
 
-  .celsius {
+  /* .celsius {
     font-size: 17px;
     text-decoration: none;
   }
@@ -1093,7 +1103,7 @@ h3 {
   .fahrenheit {
     font-size: 17px;
     text-decoration: none;
-  }
+  } */
 
   .forecast {
     margin-top: 15px;
@@ -1119,6 +1129,7 @@ h3 {
   }
 
   .forecast-temp-min {
+    font-size: 12px;
     bottom: 0;
     color: var(--clr-grey);
     transition: all 200ms ease-in-out;
@@ -1265,6 +1276,18 @@ h3 {
     border-radius: 50%;
   }
 }
+
+/* --clr-white: #42a5f5; */
+/* #ff3cac */
+/* #2b86c5 */
+
+/* #ff54a2 0%,
+      #562b7c 52%,
+      #42a5f5 100% */
+
+/* #42a5f5 0%,
+      #562b7c 52%,
+      #ff54a2 100% */
 
 /* .forecast-col {
     font-size: 20px;

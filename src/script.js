@@ -69,7 +69,7 @@ function displayForecast(response) {
           forecastDay.temp.max
         )}° <br/><span class="forecast-temp-min"> ${Math.round(
           forecastDay.temp.min
-        )}°</span></div>
+        )}° C</span></div>
         
       </div>`;
     }
@@ -182,7 +182,7 @@ function changeBgBlue() {
   s.src = "images/video.mp4";
   v.load();
   v.play();
-  v.classList.remove("hide");
+  // v.classList.remove("hide");
   videoContainer.classList.remove("bgImgColor");
   videoContainer.classList.add("bgImg");
   videoContainer.classList.remove("lightBgImg");
@@ -192,7 +192,7 @@ function changeBgPink() {
   s.src = "images/pink.mp4";
   v.load();
   v.play();
-  v.classList.remove("hide");
+  // v.classList.remove("hide");
   videoContainer.classList.remove("bgImgColor");
   videoContainer.classList.remove("bgImg");
   videoContainer.classList.add("lightBgImg");
@@ -202,7 +202,7 @@ function changeBgGreen() {
   s.src = "images/green.mp4";
   v.load();
   v.play();
-  v.classList.remove("hide");
+  // v.classList.remove("hide");
   videoContainer.classList.remove("bgImgColor");
   videoContainer.classList.remove("bgImg");
   videoContainer.classList.add("lightBgImg");
@@ -212,14 +212,14 @@ function changeBgYellow() {
   s.src = "images/yellow.mp4";
   v.load();
   v.play();
-  v.classList.remove("hide");
+  // v.classList.remove("hide");
   videoContainer.classList.remove("bgImgColor");
   videoContainer.classList.remove("bgImg");
   videoContainer.classList.add("lightBgImg");
 }
 
 function changeBgColor() {
-  v.classList.add("hide");
+  // v.classList.add("hide");
   v.pause();
   videoContainer.classList.remove("bgImg");
   videoContainer.classList.remove("lightBgImg");
