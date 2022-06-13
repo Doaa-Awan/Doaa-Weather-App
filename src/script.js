@@ -175,14 +175,15 @@ function toggleLight() {
 }
 
 //THEME BUTTONS:
+// videoContainer.classList.add("bgImgColor");
 
 function changeBgBlue() {
   s.src = "images/video.mp4";
   v.load();
   v.play();
   videoContainer.classList.remove("bgImgColor");
-  videoContainer.classList.add("bgImg");
   videoContainer.classList.remove("lightBgImg");
+  videoContainer.classList.add("bgImg");
 }
 
 function changeBgPink() {
