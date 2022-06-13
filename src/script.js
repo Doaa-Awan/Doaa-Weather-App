@@ -172,7 +172,7 @@ function getCurrentPosition() {
 
 function toggleLight() {
   document.querySelectorAll(`.f1`).forEach((el) => el.classList.toggle(`glow`));
-  lightBtn.classList.toggle("white");
+  lightBtn.classList.toggle("lightBtnMod");
   section.classList.toggle("glow");
 }
 

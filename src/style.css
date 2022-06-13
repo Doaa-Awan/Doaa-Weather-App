@@ -397,45 +397,6 @@ h3 {
   bottom: 20px;
 }
 
-/* UNITS */
-
-.units {
-  position: relative;
-  left: 160px;
-
-  /* top: 30px; */
-}
-
-.celsius {
-  font-size: 20px;
-  text-decoration: none;
-  color: grey;
-}
-
-.fahrenheit {
-  font-size: 20px;
-  text-decoration: none;
-  color: grey;
-}
-
-.active {
-  color: #ff54a2;
-  cursor: default;
-}
-
-.celsius:hover {
-  color: #42a5f5;
-}
-
-.fahrenheit:hover {
-  color: #42a5f5;
-}
-
-.cfLineBreak {
-  cursor: auto;
-  color: grey;
-}
-
 /* FORECAST */
 
 .forecast {
@@ -492,15 +453,24 @@ h3 {
 
 /* BUTTONS */
 
+.lightBtnMod {
+  --white: white;
+  --pink: transparent;
+}
+
 .lightBtn {
   font-size: 40px;
-  color: rgba(248, 248, 248, 0.7);
+  /* color: rgba(248, 248, 248, 0.7); */
   background-color: transparent;
+  -webkit-text-stroke: 1px var(--pink);
+  color: var(--white);
+  /* -webkit-text-stroke: 1px transparent; */
+  /* color: white; */
   border: none;
   width: 20px;
   padding: 0;
   position: relative;
-  top: 53px;
+  top: 70px;
   left: -160px;
   transition: all 200ms ease-in-out;
 }
