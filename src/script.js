@@ -81,10 +81,8 @@ function displayForecast(response) {
 }
 
 function getForecast(coordinates) {
-  console.log(coordinates);
   let apiKey = "9d66353d7a075841285d6608a0acc09a";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
-  console.log(apiUrl);
   axios.get(apiUrl).then(displayForecast);
 }
 
@@ -182,7 +180,6 @@ function changeBgBlue() {
   s.src = "images/video.mp4";
   v.load();
   v.play();
-  // v.classList.remove("hide");
   videoContainer.classList.remove("bgImgColor");
   videoContainer.classList.add("bgImg");
   videoContainer.classList.remove("lightBgImg");
@@ -192,7 +189,6 @@ function changeBgPink() {
   s.src = "images/pink.mp4";
   v.load();
   v.play();
-  // v.classList.remove("hide");
   videoContainer.classList.remove("bgImgColor");
   videoContainer.classList.remove("bgImg");
   videoContainer.classList.add("lightBgImg");
@@ -202,7 +198,6 @@ function changeBgGreen() {
   s.src = "images/green.mp4";
   v.load();
   v.play();
-  // v.classList.remove("hide");
   videoContainer.classList.remove("bgImgColor");
   videoContainer.classList.remove("bgImg");
   videoContainer.classList.add("lightBgImg");
@@ -212,14 +207,12 @@ function changeBgYellow() {
   s.src = "images/yellow.mp4";
   v.load();
   v.play();
-  // v.classList.remove("hide");
   videoContainer.classList.remove("bgImgColor");
   videoContainer.classList.remove("bgImg");
   videoContainer.classList.add("lightBgImg");
 }
 
 function changeBgColor() {
-  // v.classList.add("hide");
   v.pause();
   videoContainer.classList.remove("bgImg");
   videoContainer.classList.remove("lightBgImg");
@@ -297,4 +290,3 @@ lightBtn.addEventListener("click", toggleLight);
 let section = document.querySelector("section");
 
 search("Niagara Falls");
-// showLocalTemp();
