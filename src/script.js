@@ -175,7 +175,6 @@ function toggleLight() {
 }
 
 //THEME BUTTONS:
-// videoContainer.classList.add("bgImgColor");
 
 function changeBgBlue() {
   s.src = "images/video.mp4";
@@ -220,9 +219,6 @@ function changeBgColor() {
   videoContainer.classList.add("bgImgColor");
 }
 
-let videoContainer = document.querySelector(".videoContainer");
-const v = document.getElementById("vid");
-const s = document.getElementById("src");
 document.getElementById("pinkBtn").onclick = changeBgPink;
 document.getElementById("blueBtn").onclick = changeBgBlue;
 document.getElementById("greenBtn").onclick = changeBgGreen;
@@ -254,6 +250,13 @@ switchBtn.addEventListener("click", toggleDark);
 
 //GLOBAL VARIABLES:
 
+let now = new Date();
+let currentDay = document.querySelector(".current-day");
+currentDay.innerHTML = formatDay(now);
+
+let currentTime = document.querySelector(".current-time");
+currentTime.innerHTML = formatTime(now);
+
 let temperature = null;
 let description = null;
 let feelsLike = null;
@@ -269,15 +272,12 @@ let wind = document.querySelector("#wind-speed");
 let humidityElement = document.querySelector("#humidity");
 let iconElement = document.querySelector("#icon-element");
 
+let videoContainer = document.querySelector(".videoContainer");
+const v = document.getElementById("vid");
+const s = document.getElementById("src");
+
 let searchBar = document.querySelector("#search-form");
 searchBar.addEventListener("submit", handleSubmit);
-
-let now = new Date();
-let currentDay = document.querySelector(".current-day");
-currentDay.innerHTML = formatDay(now);
-
-let currentTime = document.querySelector(".current-time");
-currentTime.innerHTML = formatTime(now);
 
 let refreshButton = document.querySelector("#refresh");
 refreshButton.addEventListener("click", reload, false);

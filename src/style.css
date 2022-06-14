@@ -423,49 +423,25 @@ h3 {
   }
 }
 
-.lightBtnMod {
-  --white: white;
-  --pink: transparent;
-}
-
-.hide {
-  display: none !important;
-}
-
-.switch {
-  visibility: hidden;
-}
-
-.white {
-  color: white;
-}
-
-.glow {
-  background-color: white;
-}
-
-.whiteborder {
-  border: 2px solid white;
-}
-
-.blueBG {
-  background: #68aee7;
-}
-
-.blueBGC {
-  background-color: #68aee7;
-}
-
-.noBgColor {
-  background-image: none;
-}
-
 .bgImg {
   background-image: linear-gradient(rgba(12, 3, 51, 0.8), rgba(12, 3, 51, 0.3));
 }
 
 .lightBgImg {
   background-image: linear-gradient(rgba(12, 3, 51, 0.3), rgba(12, 3, 51, 0.3));
+}
+
+.lightBtnMod {
+  --white: white;
+  --pink: transparent;
+}
+
+.switch {
+  visibility: hidden;
+}
+
+.glow {
+  background-color: white;
 }
 
 /* GITHUB LINK */
